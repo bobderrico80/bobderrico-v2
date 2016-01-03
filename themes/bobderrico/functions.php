@@ -120,11 +120,8 @@
   function bobderrico_scripts() {
     wp_enqueue_style('bootstrap-css',
                      get_template_directory_uri() . '/assets/dist/vendor/bootstrap/dist/css/bootstrap.min.css');
-    wp_enqueue_style('bootstrap-theme-css',
-                     get_template_directory_uri() . '/assets/dist/vendor/bootstrap/dist/css/bootstrap-theme.min.css',
-                     ['bootstrap-css']);
     wp_enqueue_style('bobderrico-styles', get_template_directory_uri() . '/assets/dist/styles/main.css',
-                     ['bootstrap-css', 'bootstrap-theme-css'], wp_get_theme()->get('Version'));
+                     ['bootstrap-css'], wp_get_theme()->get('Version'));
     wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/dist/vendor/jquery/dist/jquery.min.js');
     wp_enqueue_script('bootstrap-js',
                       get_template_directory_uri() . '/assets/dist/vendor/bootstrap/dist/js/bootstrap.min.js',
@@ -136,26 +133,11 @@
   add_action('wp_enqueue_scripts', 'bobderrico_scripts');
 
   /**
-   * Implement the Custom Header feature.
+   * Load inc files
    */
   require get_template_directory() . '/inc/custom-header.php';
-
-  /**
-   * Custom template tags for this theme.
-   */
   require get_template_directory() . '/inc/template-tags.php';
-
-  /**
-   * Custom functions that act independently of the theme templates.
-   */
   require get_template_directory() . '/inc/extras.php';
-
-  /**
-   * Customizer additions.
-   */
   require get_template_directory() . '/inc/customizer.php';
-
-  /**
-   * Load Jetpack compatibility file.
-   */
   require get_template_directory() . '/inc/jetpack.php';
+  require get_template_directory() . '/inc/util.php';
