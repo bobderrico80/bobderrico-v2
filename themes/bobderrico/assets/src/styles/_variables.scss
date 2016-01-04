@@ -1,0 +1,35 @@
+/* Colors */
+$header-main-color: white;
+$header-secondary-color: white;
+$header-menu-toggle-color: white;
+$header-menu-toggle-active-color: orange;
+$header-bg-color: #4f4f9e;
+
+$mobile-nav-bg-color: #4f4f9e;
+$mobile-nav-link-color: white;
+$mobile-nav-current-link-color: orange;
+$mobile-nav-social-icon-color: #bbbbbb;
+
+/* Dimensions */
+$header-height: 105px;
+$header-menu-toggle-size: 40px;
+
+$mobile-nav-width: 75%;
+$mobile-nav-social-icon-size: 16px;
+
+/* Margin/Padding */
+$container-padding: 15px;
+$container-padding-double: $container-padding * 2;
+
+/* Borders */
+$mobile-nav-border: 3px solid white;
+
+/* Font Sizes */
+$mobile-nav-font-size: 2em;
+
+/* Animations */
+$fast: 250ms;
+$medium: 500ms;
+$slow: 1s;
+
+$mobile-nav-animation: all $fast ease-in-out;

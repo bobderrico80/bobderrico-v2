@@ -1,4 +1,101 @@
-.navbar-toggle {
-  float: left;
-  border: none;
+#masthead {
+  width: 100%;
+  background-color: $header-bg-color;
+  padding: $container-padding;
+  height: $header-height;
+
+  .menu-toggle, .site-branding {
+    float: left;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: $header-menu-toggle-color;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0;
+    font-size: $header-menu-toggle-size;
+    margin-top: ($header-height - $header-menu-toggle-size - $container-padding * 2) / 2
+  }
+
+  .site-branding {
+    margin-left: $container-padding-double;
+  }
+
+  .site-title {
+    margin: 0;
+
+    a {
+      color: $header-main-color;
+      text-decoration: none;
+      font-weight: normal;
+    }
+  }
+
+  .site-description {
+    color: $header-secondary-color;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .toggled {
+    .menu-toggle {
+      color: $header-menu-toggle-active-color;
+    }
+
+  }
+
 }
+
+.nav-menu {
+
+  &[aria-expanded="false"] {
+    left: -$mobile-nav-width;
+  }
+
+  position: fixed;
+  width: $mobile-nav-width;
+  height: 100%;
+  background-color: $mobile-nav-bg-color;
+  top: $header-height;
+  left: 0;
+  padding: $container-padding;
+  border-top: $mobile-nav-border;
+  border-right: $mobile-nav-border;
+  transition: $mobile-nav-animation;
+
+  li {
+    float: none;
+    font-size: $mobile-nav-font-size;
+
+    a {
+      color: $mobile-nav-link-color;
+
+    }
+
+    &.current-menu-item a {
+      color: $mobile-nav-current-link-color;
+    }
+
+  }
+
+  .social-buttons {
+    font-size: $mobile-nav-social-icon-size;
+
+    a {
+      color: $mobile-nav-social-icon-color;
+    }
+
+    li {
+      float: left;
+      margin-right: $container-padding;
+    }
+  }
+}
+
+/* Override to keep menu text from disappearing when mobile menu slides out */
+.main-navigation ul {
+  display: block;
+}
+
