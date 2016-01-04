@@ -52,7 +52,8 @@ gulp.task('watch', function() {
 
   browserSync.init({
     proxy: 'bobderrico.dev',
-    files: ['**/*.php']
+    files: ['**/*.php'],
+    open: false
   });
 
   // Watch .scss files
