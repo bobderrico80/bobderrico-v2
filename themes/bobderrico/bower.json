@@ -2,6 +2,7 @@
   "name": "bobderrico",
   "dependencies": {
     "jquery": "~2.1.4",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "font-mfizz": "~2.0.1"
   }
 }
