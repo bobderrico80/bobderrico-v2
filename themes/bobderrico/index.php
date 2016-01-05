@@ -16,9 +16,10 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
-
       <?php
+      if (is_home()) {
+        get_template_part('template-parts/hero', 'home');
+      }
       if (have_posts()) :
 
         if (is_home() && !is_front_page()) : ?>

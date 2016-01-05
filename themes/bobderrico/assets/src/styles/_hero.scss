@@ -1,0 +1,51 @@
+@mixin hero-component() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-container {
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+}
+
+.hero-link {
+  display: block;
+  text-decoration: none;
+}
+
+.hero-blank-bg {
+  @include hero-component();
+  z-index: 0;
+  background-color: black;
+}
+
+.hero-img-bg {
+  @include hero-component();
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-content {
+  @include hero-component();
+  position: relative;
+  z-index: 2;
+  padding: $container-padding;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.hero-title {
+  margin: 0;
+  font-size: $font-size-large;
+  color: white;
+}
+
+.hero-excerpt {
+  margin: $margin-top;
+  font-size: $font-size-normal;
+  color: white;
+}
