@@ -30,17 +30,17 @@ $container-padding-double: $container-padding * 2;
 $mobile-nav-border: 3px solid white;
 
 /* Font Sizes */
-$large-font-size: 2em;
-$normal-font-size: 1em;
-$small-font-size: .8em;
+$font-size-large: 2em;
+$font-size-normal: 1em;
+$font-size-small: .8em;
 
-$mobile-nav-font-size: $large-font-size;
+$mobile-nav-font-size: $font-size-large;
 
-$footer-font-size: $small-font-size;
+$footer-font-size: $font-size-small;
 
 /* Animations */
-$fast-animation: 250ms;
-$medium-animation: 500ms;
-$slow-animation: 1s;
+$animation-speed-fast: 250ms;
+$animation-speed-medium: 500ms;
+$animation-speed-slow: 1s;
 
-$mobile-nav-animation: all $fast-animation ease-in-out;
+$mobile-nav-animation: all $animation-speed-fast ease-in-out;
