@@ -16,7 +16,7 @@
 
     <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="site-info">
-        Copyright &copy; <?= date('Y') ?> by Bob D'Errico
+        <?= __('Copyright', 'bobderrico') ?> &copy; <?= date('Y') ?> Bob D'Errico
       </div><!-- .site-info -->
     </footer><!-- #colophon -->
 
