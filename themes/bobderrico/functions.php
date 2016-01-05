@@ -121,6 +121,7 @@
     wp_enqueue_style('bobderrico-styles', get_template_directory_uri() . '/assets/dist/styles/main.css',
                      [], wp_get_theme()->get('Version'));
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/dist/vendor/font-awesome/css/font-awesome.min.css');
+    wp_enqueue_style('font-fizz', get_template_directory_uri() . '/assets/dist/vendor/font-mfizz/css/font-mfizz.css');
     wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/dist/vendor/jquery/dist/jquery.min.js');
     wp_enqueue_script('bobderrico-scripts', get_template_directory_uri() . '/assets/dist/scripts/main.js',
                       ['jquery'], wp_get_theme()->get('Version'), true);
@@ -137,3 +138,4 @@
   require get_template_directory() . '/inc/customizer.php';
   require get_template_directory() . '/inc/jetpack.php';
   require get_template_directory() . '/inc/util.php';
+  require get_template_directory() . '/inc/taxonomies.php';
