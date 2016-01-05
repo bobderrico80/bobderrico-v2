@@ -10,12 +10,17 @@ $mobile-nav-link-color: white;
 $mobile-nav-current-link-color: orange;
 $mobile-nav-social-icon-color: #bbbbbb;
 
+$footer-bg-color: #4f4f9e;
+$footer-main-color: white;
+
 /* Dimensions */
 $header-height: 105px;
 $header-menu-toggle-size: 40px;
 
 $mobile-nav-width: 75%;
 $mobile-nav-social-icon-size: 16px;
+
+$footer-height: 30px;
 
 /* Margin/Padding */
 $container-padding: 15px;
@@ -25,11 +30,17 @@ $container-padding-double: $container-padding * 2;
 $mobile-nav-border: 3px solid white;
 
 /* Font Sizes */
-$mobile-nav-font-size: 2em;
+$large-font-size: 2em;
+$normal-font-size: 1em;
+$small-font-size: .8em;
+
+$mobile-nav-font-size: $large-font-size;
+
+$footer-font-size: $small-font-size;
 
 /* Animations */
-$fast: 250ms;
-$medium: 500ms;
-$slow: 1s;
+$fast-animation: 250ms;
+$medium-animation: 500ms;
+$slow-animation: 1s;
 
-$mobile-nav-animation: all $fast ease-in-out;
+$mobile-nav-animation: all $fast-animation ease-in-out;
