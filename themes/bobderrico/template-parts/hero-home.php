@@ -13,6 +13,8 @@ $latest = new WP_Query(['post_type' => 'post',
                         'order' => 'DESC'
                        ]);
 
+global $bd_skills;
+
 if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
 
   $has_post_thumbnail = has_post_thumbnail();
@@ -34,6 +36,10 @@ if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
             <?= get_the_title() ?>
         </h1>
         <p class="hero-excerpt"><?= get_the_excerpt() ?></p>
+        <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
+        <time class="hero-date entry-date updated" datetime="<?= get_the_date('c') ?>">
+          <?= get_the_date() ?>
+        </time>
       </header>
   </div>
 </a>

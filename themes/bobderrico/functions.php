@@ -143,5 +143,5 @@
   * Initialize classes
   */
 
-  $skills = new Bobderrico_Skills();
+  $bd_skills = new Bobderrico_Skills();
 

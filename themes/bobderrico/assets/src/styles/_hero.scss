@@ -49,3 +49,22 @@
   font-size: $font-size-normal;
   color: white;
 }
+
+.hero-skills {
+  font-size: 1.5em;
+  float: left;
+
+  a {
+    color: white;
+  }
+
+  li {
+    margin-right: .25em;
+  }
+
+}
+
+.hero-date {
+  color: white;
+  float: right;
+}

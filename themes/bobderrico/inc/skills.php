@@ -73,5 +73,27 @@ class Bobderrico_Skills {
                         'label' => __('Skills')
                       ]);
   }
+
+  public function render_skills_icons($post_id, $class='') {
+
+    $skills = get_the_terms($post_id, 'skills');
+
+    ?>
+    <ul class="skills-icons <?= $class ?>">
+      <?php foreach ($skills as $skill) : ?>
+        <li>
+          <a href="<?= get_term_link($skill) ?>" title="<?= $skill->name ?>">
+            <?php if (substr($skill->description, 0, 4) === 'icon') : ?>
+              <i class="<?= $skill->description ?>"></i>
+            <?php else : ?>
+              <?= $skill->name ?>
+            <?php endif; ?>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+    <?php
+
+  }
   
 }
