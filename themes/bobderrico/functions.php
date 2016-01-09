@@ -137,5 +137,11 @@
   require get_template_directory() . '/inc/extras.php';
   require get_template_directory() . '/inc/customizer.php';
   require get_template_directory() . '/inc/jetpack.php';
-  require get_template_directory() . '/inc/util.php';
-  require get_template_directory() . '/inc/taxonomies.php';
+  require get_template_directory() . '/inc/skills.php';
+
+ /**
+  * Initialize classes
+  */
+
+  $skills = new Bobderrico_Skills();
+
