@@ -16,3 +16,22 @@ html, body, .site {
   display: block;
   height: $footer-height;
 }
+
+.clearfix {
+  clear: both;
+}
+
+button {
+  box-shadow: none;
+  text-shadow: none;
+  font-size: $font-size-normal;
+
+  &:hover {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}

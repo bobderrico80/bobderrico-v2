@@ -8,7 +8,7 @@
 
 .hero-container {
   width: 100%;
-  min-height: 300px;
+  min-height: $hero-height;
   position: relative;
 }
 
@@ -20,7 +20,7 @@
 .hero-blank-bg {
   @include hero-component();
   z-index: 0;
-  background-color: black;
+  background-color: $hero-blank-bg-color;
 }
 
 .hero-img-bg {
@@ -35,36 +35,50 @@
   position: relative;
   z-index: 2;
   padding: $container-padding;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: $hero-overlay-color;
+  text-shadow: $hero-text-shadow;
 }
 
 .hero-title {
   margin: 0;
-  font-size: $font-size-large;
-  color: white;
+  font-size: $hero-title-font-size;
+  color: $hero-main-color;
 }
 
 .hero-excerpt {
-  margin: $margin-top;
+  margin: $margin-vertical;
   font-size: $font-size-normal;
-  color: white;
+  color: $hero-main-color;
+}
+
+.btn-hero-more {
+  color: $hero-button-color;
+  background-color: $hero-button-bg-color;
+  border-color: $hero-button-border-color;
+
+  &:hover {
+    background-color: orange;
+  }
+
 }
 
 .hero-skills {
-  font-size: 1.5em;
+  font-size: $hero-skills-size;
   float: left;
+  margin: $margin-top;
 
   a {
-    color: white;
+    color: $hero-main-color;
   }
 
   li {
-    margin-right: .25em;
+    margin: $thin-margin-right;
   }
 
 }
 
 .hero-date {
-  color: white;
+  color: $hero-main-color;
   float: right;
+  margin: $margin-top;
 }

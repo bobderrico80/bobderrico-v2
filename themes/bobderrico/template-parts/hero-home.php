@@ -36,10 +36,14 @@ if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
             <?= get_the_title() ?>
         </h1>
         <p class="hero-excerpt"><?= get_the_excerpt() ?></p>
+        <button class="btn-hero-more">
+          Read More
+        </button>
         <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
         <time class="hero-date entry-date updated" datetime="<?= get_the_date('c') ?>">
-          <?= get_the_date() ?>
+          <i class="fa fa-calendar"></i> <?= get_the_date() ?>
         </time>
+        <div class="clearfix"></div>
       </header>
   </div>
 </a>

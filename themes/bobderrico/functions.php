@@ -137,11 +137,15 @@
   require get_template_directory() . '/inc/extras.php';
   require get_template_directory() . '/inc/customizer.php';
   require get_template_directory() . '/inc/jetpack.php';
-  require get_template_directory() . '/inc/skills.php';
+  require get_template_directory() . '/inc/class-bobderrico.php';
+  require get_template_directory() . '/inc/class-bobderrico-config.php';
+  require get_template_directory() . '/inc/class-bobderrico-skills.php';
 
  /**
   * Initialize classes
   */
 
+  $config = new Bobderrico_Config();
+  $bd_main = new Bobderrico($config);
   $bd_skills = new Bobderrico_Skills();
 
