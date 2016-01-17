@@ -13,6 +13,7 @@ $latest = new WP_Query(['post_type' => 'post',
                         'order' => 'DESC'
                        ]);
 
+global $bobderrico;
 global $bd_skills;
 
 if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
@@ -40,9 +41,7 @@ if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
           Read More
         </button>
         <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
-        <time class="hero-date entry-date updated" datetime="<?= get_the_date('c') ?>">
-          <i class="fa fa-calendar"></i> <?= get_the_date() ?>
-        </time>
+        <?php $bobderrico->render_post_time('hero-date'); ?>
         <div class="clearfix"></div>
       </header>
   </div>

@@ -1,7 +1,7 @@
 .site-header {
   width: 100%;
   background-color: $header-bg-color;
-  padding: $container-padding;
+  padding: $mp2;
   height: $header-height;
 
   .menu-toggle, .site-branding {
@@ -16,11 +16,11 @@
     text-shadow: none;
     padding: 0;
     font-size: $header-menu-toggle-size;
-    margin-top: ($header-height - $header-menu-toggle-size - $container-padding * 2) / 2
+    margin-top: ($header-height - $header-menu-toggle-size - $mp2 * 2) / 2
   }
 
   .site-branding {
-    margin-left: $container-padding-double;
+    margin-left: $mp3;
   }
 
   .site-title {
@@ -60,10 +60,11 @@
   background-color: $mobile-nav-bg-color;
   top: $header-height;
   left: 0;
-  padding: $container-padding;
+  padding: $mp2;
   border-top: $mobile-nav-border;
   border-right: $mobile-nav-border;
   transition: $mobile-nav-animation;
+  z-index: 10;
 
   li {
     float: none;
@@ -89,7 +90,7 @@
 
     li {
       float: left;
-      margin-right: $container-padding;
+      margin-right: $mp2;
     }
   }
 }

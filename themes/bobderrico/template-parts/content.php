@@ -1,48 +1,49 @@
 <?php
-  /**
-   * Template part for displaying posts.
-   *
-   * @link https://codex.wordpress.org/Template_Hierarchy
-   *
-   * @package bobderrico
-   */
+/**
+ *
+ * Template part for displaying posts.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package bobderrico
+ */
 
+global $bobderrico;
+global $bd_skills;
+$the_id = get_the_ID();
+$permalink = esc_url(get_permalink());
+$title = get_the_title();
+$featured_image_info = $bobderrico->get_featured_image_info($the_id);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
-    <?php
-      if (is_single()) {
-        the_title('<h1 class="entry-title">', '</h1>');
-      } else {
-        the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-      }
+    <h2 class="entry-title">
+      <a href="<?= $permalink ?>" rel="bookmark">
+        <?= $title ?>
+      </a>
+    </h2>
+    <div class="entry-meta">
+      <?php $bobderrico->render_post_time(); ?>
+    </div><!-- .entry - meta-->
+    <?php if ($featured_image_info): ?>
+    <img class="entry-featured-image" src="<?= $featured_image_info['src'] ?>" srcset="<?= $featured_image_info['srcset'] ?>"
+         alt="<?= $featured_image_info['alt'] ?>">
+    <?php endif; ?>
 
-      if ('post' === get_post_type()) : ?>
-        <div class="entry-meta">
-          <?php bobderrico_posted_on(); ?>
-        </div><!-- .entry-meta -->
-        <?php
-      endif; ?>
   </header><!-- .entry-header -->
-
   <div class="entry-content">
     <?php
-      the_content(sprintf(
-                  /* translators: %s: Name of current post. */
-                      wp_kses(__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'bobderrico'),
-                              array('span' => array('class' => array()))),
-                      the_title('<span class="screen-reader-text">"', '"</span>', false)
-                  ));
+    $read_more_text = esc_html__('Read More', 'bobderrico');
+    $continue = $read_more_text . '<span class="screen-reader-text">' . $title . '</span>';
+    $continue .= '<span class="meta-nav">&rarr;</span>';
 
-      wp_link_pages(array(
-                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'bobderrico'),
-                        'after' => '</div>',
-                    ));
+    the_content($continue);
+
     ?>
   </div><!-- .entry-content -->
 
   <footer class="entry-footer">
-    <?php bobderrico_entry_footer(); ?>
+    <?php $bd_skills->render_skills_icons(get_the_ID(), 'home-skills'); ?>
   </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -1,5 +1,7 @@
 /* Colors */
 
+$main-link-color: #4f4f9e;
+
 $header-main-color: white;
 $header-secondary-color: white;
 $header-menu-toggle-color: white;
@@ -34,33 +36,57 @@ $mobile-nav-social-icon-size: 16px;
 $hero-height: 300px;
 $hero-skills-size: 1.25em;
 
+$home-skills-size: 1.25em;
+
 $footer-height: 30px;
 
 /* Margin/Padding */
-$container-padding: 15px;
-$container-padding-double: $container-padding * 2;
+$mp1: 8px;
+$mp2: 15px;
+$mp3: 30px;
+$mp4: 50px;
 
-$margin-top: 15px 0 0 0;
-$margin-vertical: 15px 0;
-$margin-right: 0 15px 0 0;
+$mp1-t: $mp1 0 0 0;
+$mp1-b: 0 0 $mp1 0;
+$mp1-l: 0 $mp1 0 0;
+$mp1-r: 0 0 0 $mp1;
+$mp1-v: $mp1 0;
+$mp1-h: 0 $mp1;
 
-$thin-margin-top: 8px 0 0 0;
-$thin-margin-right: 0 8px 0 0;
+$mp2-t: $mp2 0 0 0;
+$mp2-b: 0 0 $mp2 0;
+$mp2-r: 0 $mp2 0 0;
+$mp2-l: 0 0 0 $mp2;
+$mp2-v: $mp2 0;
+$mp2-h: 0 $mp2;
 
-$thick-margin-left: 30px;
+$mp3-t: $mp3 0 0 0;
+$mp3-b: 0 0 $mp3 0;
+$mp3-r: 0 $mp3 0 0;
+$mp3-l: 0 0 0 $mp3;
+$mp3-v: $mp3 0;
+$mp3-h: 0 $mp3;
+
+$mp4-t: $mp4 0 0 0;
+$mp4-b: 0 0 $mp4 0;
+$mp4-r: 0 $mp4 0 0;
+$mp4-l: 0 0 0 $mp4;
+$mp4-v: $mp4 0;
+$mp4-h: 0 $mp4;
 
 /* Borders */
 $mobile-nav-border: 3px solid white;
 
 /* Font Sizes */
-$font-size-large: 2em;
-$font-size-normal: 1em;
-$font-size-small: .8em;
+$fs1: .8em;
+$fs2: 1em;
+$fs3: 1.5em;
+$fs4: 2em;
 
-$mobile-nav-font-size: $font-size-large;
+$mobile-nav-font-size: $fs4;
 
-$hero-title-font-size: $font-size-large;
-$footer-font-size: $font-size-small;
+$hero-title-font-size: $fs4;
+$footer-font-size: $fs1;
 
 
 /* Animations */

@@ -63,7 +63,7 @@ class Bobderrico_Skills {
   
   public function do_skills_meta_box($post_type) {
     remove_meta_box('tagsdiv-skills', $post_type, 'normal');
-    add_meta_box('tagsdiv-skills', 'Skills', 'skills_meta_box', $post_type, 'side');
+    add_meta_box('tagsdiv-skills', 'Skills', [$this, 'render_skills_meta_box'], $post_type, 'side');
   }
   
   public function register_skills_taxonomy() {
@@ -77,6 +77,10 @@ class Bobderrico_Skills {
   public function render_skills_icons($post_id, $class='') {
 
     $skills = get_the_terms($post_id, 'skills');
+
+    if (!$skills) {
+      return false;
+    }
 
     ?>
     <ul class="skills-icons <?= $class ?>">

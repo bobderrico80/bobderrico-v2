@@ -10,6 +10,7 @@
   width: 100%;
   min-height: $hero-height;
   position: relative;
+  margin: $mp3-b;
 }
 
 .hero-link {
@@ -34,7 +35,7 @@
   @include hero-component();
   position: relative;
   z-index: 2;
-  padding: $container-padding;
+  padding: $mp2;
   background-color: $hero-overlay-color;
   text-shadow: $hero-text-shadow;
 }
@@ -46,8 +47,8 @@
 }
 
 .hero-excerpt {
-  margin: $margin-vertical;
-  font-size: $font-size-normal;
+  margin: $mp2-v;
+  font-size: $fs2;
   color: $hero-main-color;
 }
 
@@ -65,14 +66,14 @@
 .hero-skills {
   font-size: $hero-skills-size;
   float: left;
-  margin: $margin-top;
+  margin: $mp2-t;
 
   a {
     color: $hero-main-color;
   }
 
   li {
-    margin: $thin-margin-right;
+    margin: $mp1-l;
   }
 
 }
@@ -80,5 +81,5 @@
 .hero-date {
   color: $hero-main-color;
   float: right;
-  margin: $margin-top;
+  margin: $mp2-t;
 }

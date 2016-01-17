@@ -1,0 +1,31 @@
+.home {
+
+  article, .posts-navigation {
+    margin: $mp4 $mp2;
+  }
+
+  header h2 {
+    font-size: $fs3;
+    margin: 0;
+  }
+
+  .entry-meta {
+    margin: $mp3-b;
+  }
+
+  .entry-featured-image {
+    display: block;
+  }
+
+  .entry-content {
+    margin-top: -$mp1;
+    margin-bottom: -$mp2;
+  }
+
+  .skills-icons li {
+    font-size: $home-skills-size;
+  }
+
+
+
+}
