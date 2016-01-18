@@ -24,7 +24,7 @@ class Bobderrico_Skills {
     
     $all_terms = get_terms('skills', ['hide_empty' => 0]);
     $post_terms = get_the_terms($post->ID, 'skills');
-    $name = 'tax_input[' . 'skills' . ']{}';
+    $name = 'tax_input[' . 'skills' . '][]';
     
     $post_term_ids = [];
     if ($post_terms) {

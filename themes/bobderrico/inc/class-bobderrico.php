@@ -24,6 +24,8 @@ class Bobderrico {
     add_filter('excerpt_more', [$this, 'set_excerpt_more']);
     add_action('pre_get_posts', [$this, 'alter_home_pagination']);
     add_filter('found_posts', [$this, 'adjust_offset_pagination'], 1, 2);
+    add_action('init', [$this, 'register_custom_post_types']);
+    add_action('save_post', [$this, 'save_custom_fields']);
 
   }
 
@@ -36,6 +38,102 @@ class Bobderrico {
   public function set_excerpt_more() {
 
     return $this->excerpt_more;
+
+  }
+
+  public function register_custom_post_types() {
+
+    $this->register_project_post_type();
+
+  }
+
+  private function register_project_post_type() {
+
+    register_post_type('project',
+      [
+        'labels' => [
+          'name' => _x('Projects', 'post type general name', 'bobderrico'),
+          'singular_name' => _x('Project', 'post type singular name', 'bobderrico'),
+          'add_new' => _x('Add New', 'project', 'bobderrico'),
+          'add_new_item' => __('Add New Project', 'bobderrico'),
+          'new_item' => __('New Project', 'bobderrico'),
+          'edit_item' => __('Edit Project', 'bobderrico'),
+          'view_item' => __('View Project', 'bobderrico'),
+          'all_items' => __('All Projects', 'bobderrico'),
+          'search_items' => __('Search Projects', 'bobderrico'),
+          'not_found' => __('No projects found.', 'bobderrico'),
+          'not_found_in_trash' => __('No projects found in trash', 'bobderrico')
+        ],
+        'description' => __('Project portfolio items', 'bobderrico'),
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => ['slug' => 'projects'],
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => 20,
+        'taxonomies' => ['skills'],
+        'menu_icon' => 'dashicons-welcome-widgets-menus',
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'register_meta_box_cb' => [$this, 'register_project_custom_fields']
+      ]
+    );
+
+  }
+
+  public function register_project_custom_fields() {
+
+    add_meta_box('project-info', __('Project Info', 'bobderrico'), [$this, 'render_project_custom_fields'], 'project',
+                 'normal', 'default');
+
+  }
+
+  public function render_project_custom_fields($post) {
+
+    require('forms/project-custom-fields.php');
+
+  }
+
+  public function save_custom_fields($post_id) {
+
+    $this->save_project($post_id);
+
+  }
+
+  private function save_project($post_id) {
+
+    if (!isset($_POST['bobderrico_project_info_nonce'])) {
+      return;
+    }
+
+    if (!wp_verify_nonce($_POST['bobderrico_project_info_nonce'], 'bobderrico_save_project_info')) {
+      return;
+    }
+
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+      return;
+    }
+
+    if (isset($_POST['post_type']) && 'project' === $_POST['post_type'] ) {
+
+      if (!current_user_can('edit_post', $post_id)) {
+        return;
+      }
+
+    }
+
+    if (!isset($_POST['project_url']) || !isset($_POST['github_url'])) {
+      return;
+    }
+
+    $project_url = sanitize_text_field($_POST['project_url']);
+    $github_url = sanitize_text_field($_POST['github_url']);
+
+    update_post_meta($post_id, '_bd_project_url', $project_url);
+    update_post_meta($post_id, '_bd_github_url', $github_url);
 
   }
 
