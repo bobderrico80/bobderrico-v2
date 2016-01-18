@@ -1,0 +1,24 @@
+.single-post {
+  .entry-content, .entry-footer, .post-navigation, .comments-area {
+    margin: $mp2-h;
+  }
+
+  .comments-area {
+    margin-top: $mp4;
+  }
+
+  .entry-footer {
+    margin-top: $mp2;
+    margin-bottom: $mp3;
+  }
+
+  .tag-list {
+    font-style: italic;
+  }
+
+  .nav-links {
+    margin: $mp4-b;
+  }
+
+
+}

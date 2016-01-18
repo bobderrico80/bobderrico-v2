@@ -22,8 +22,16 @@
     margin-bottom: -$mp2;
   }
 
+  .skills-icons {
+    float: left;
+  }
+
   .skills-icons li {
     font-size: $home-skills-size;
+  }
+
+  .entry-comment-count {
+    float: right;
   }
 
 

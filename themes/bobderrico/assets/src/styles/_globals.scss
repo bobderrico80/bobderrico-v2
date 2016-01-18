@@ -21,7 +21,7 @@ html, body, .site {
   clear: both;
 }
 
-button {
+button, input[type="submit"] {
   box-shadow: none;
   text-shadow: none;
   font-size: $fs2;

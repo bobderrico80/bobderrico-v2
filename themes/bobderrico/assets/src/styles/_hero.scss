@@ -8,7 +8,7 @@
 
 .hero-container {
   width: 100%;
-  min-height: $hero-height;
+  min-height: $hero-height-home;
   position: relative;
   margin: $mp3-b;
 }
@@ -16,6 +16,10 @@
 .hero-link {
   display: block;
   text-decoration: none;
+
+  &:hover, &:active {
+    text-decoration: none;
+  }
 }
 
 .hero-blank-bg {
@@ -82,4 +86,36 @@
   color: $hero-main-color;
   float: right;
   margin: $mp2-t;
+}
+
+.single-post {
+  .hero-container {
+    min-height: $hero-height-single;
+  }
+
+  .hero-content {
+    position: absolute;
+  }
+
+  .hero-skills, .hero-date {
+    display: block;
+    float: none;
+  }
+
+  .hero-skills {
+    float: left;
+  }
+
+  .hero-comment-count {
+    float: right;
+
+    a {
+      color: white;
+    }
+  }
+
+  .hero-title, .hero-skills, .hero-date, .hero-comment-count {
+    margin: $mp2-b;
+  }
+
 }

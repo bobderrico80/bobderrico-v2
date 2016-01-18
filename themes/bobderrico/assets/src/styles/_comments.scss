@@ -1,0 +1,40 @@
+
+.comments-title {
+  font-size: $fs3;
+  font-style: italic;
+}
+
+.comments-area ol {
+  margin: 0;
+}
+
+.comment-list {
+  padding: 0;
+
+  .children {
+    margin: $mp3-v;
+    padding: $mp2-l;
+    border-left: $comments-nested-border;
+  }
+
+}
+
+.comment {
+  margin: $mp3-v;
+  list-style: none;
+}
+
+.comment-reply-title {
+  margin: 0;
+  font-size: $fs3;
+}
+
+.comment-form {
+  label, input[type="text"], input[type="email"], input[type="url"] {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+
