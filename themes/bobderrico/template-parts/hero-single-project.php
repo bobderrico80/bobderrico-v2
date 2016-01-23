@@ -9,10 +9,11 @@
 global $bobderrico;
 global $bd_skills;
 
-$comment_count = get_comments_number(get_the_ID());
+$the_id = get_the_ID();
+$comment_count = get_comments_number($the_id);
 $has_post_thumbnail = has_post_thumbnail();
 if ($has_post_thumbnail) {
-  $featured_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full')[0];
+  $featured_image_src = wp_get_attachment_image_src(get_post_thumbnail_id($the_id), 'full')[0];
 } else {
   $featured_image_src = '';
 }
@@ -28,15 +29,8 @@ if ($has_post_thumbnail) {
         <h1 class="hero-title">
           <?= get_the_title() ?>
         </h1>
-        <?php $bobderrico->render_post_time('hero-date'); ?>
+        <?php $bobderrico->render_project_links($the_id) ?>
         <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
-        <?php if ($comment_count): ?>
-          <div class="hero-comment-count">
-            <a href="#comments">
-              <i class="fa fa-comment"></i> <?= $comment_count ?>
-            </a>
-          </div>
-        <?php endif; ?>
         <div class="clearfix"></div>
       </header>
   </div>
