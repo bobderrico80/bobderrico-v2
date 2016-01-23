@@ -1,4 +1,4 @@
-.home {
+.home, .post-type-archive-project {
 
   article, .posts-navigation {
     margin: $mp4 $mp2;
@@ -32,6 +32,10 @@
 
   .entry-comment-count {
     float: right;
+  }
+
+  .entry-footer {
+    overflow: hidden;
   }
 
 

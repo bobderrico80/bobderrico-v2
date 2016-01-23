@@ -9,11 +9,14 @@ class Bobderrico {
 
   private $excerpt_length;
   private $excerpt_more;
+  private $altered_post_type_archives;
 
   function __construct() {
 
-    $this->excerpt_length = 30;
+    $this->home_excerpt_length = 30;
+    $this->project_excerpt_length = 20;
     $this->excerpt_more = '...';
+    $this->altered_post_types = ['post', 'project'];
     $this->register_hooks();
 
   }
@@ -31,7 +34,13 @@ class Bobderrico {
 
   public function set_excerpt_length() {
 
-    return $this->excerpt_length;
+    if (is_home()) {
+      return $this->home_excerpt_length;
+    }
+
+    if (is_post_type_archive('project')) {
+      return $this->project_excerpt_length;
+    }
 
   }
 
@@ -139,7 +148,7 @@ class Bobderrico {
 
   public function alter_home_pagination(&$query) {
 
-    if (!$query->is_home()) {
+    if (!$query->is_home() && !$this->is_altered_post_type($query)) {
       return;
     }
 
@@ -158,9 +167,21 @@ class Bobderrico {
 
   }
 
+  private function is_altered_post_type($query) {
+
+    foreach ($this->altered_post_types as $altered_post_type) {
+      if ($query->is_post_type_archive($altered_post_type)) {
+        return true;
+      }
+    }
+
+    return false;
+
+  }
+
   public function adjust_offset_pagination($found_posts, $query) {
 
-    if ($query->is_home()) {
+    if ($query->is_home() || $this->is_altered_post_type($query)) {
       return $found_posts - 1;
     }
 
@@ -202,6 +223,37 @@ class Bobderrico {
     }
 
     return false;
+  }
+
+  public function get_project_urls($post_id) {
+
+    $project_urls = [];
+    $project_urls['github'] = esc_url(get_post_meta(get_the_id(), '_bd_github_url', true));
+    $project_urls['project'] = esc_url(get_post_meta(get_the_id(), '_bd_project_url', true));
+
+    return $project_urls;
+
+  }
+
+  public function render_project_links($post_id) {
+
+    $project_urls = $this->get_project_urls($post_id);
+
+    ?>
+
+    <p class="project-project-url">
+      <a href="<?= $project_urls['project'] ?>">
+        <?= $project_urls['project'] ?>
+      </a>
+    </p>
+    <p class="project-github-url">
+      <i class="fa fa-github-square"></i>
+      <a href="<?= $project_urls['github'] ?>">
+        <?= $project_urls['github'] ?>
+      </a>
+    </p>
+
+    <?php
   }
 
 }

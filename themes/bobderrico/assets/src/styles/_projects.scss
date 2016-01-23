@@ -1,0 +1,43 @@
+.post-type-archive-project  {
+
+  .hero-container p {
+    margin: 0;
+
+    a {
+      color: white;
+    }
+
+    .fa-github-square {
+      color: white;
+    }
+  }
+
+  .project-github-url {
+    margin: $mp2-b;
+  }
+
+  .project-project-url {
+    margin: $mp2-t;
+  }
+
+  .fa-github-square {
+    font-size: $fs2;
+  }
+
+  .hero-excerpt {
+    margin: $mp2-b;
+  }
+
+  .entry-meta {
+    margin: 0;
+  }
+
+  .entry-content {
+    margin: 0;
+  }
+
+  .entry-content p {
+    margin: $mp2-b;
+  }
+
+}
