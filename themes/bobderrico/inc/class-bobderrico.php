@@ -235,6 +235,19 @@ class Bobderrico {
 
   }
 
+  public function render_featured_image($post_id) {
+
+    $featured_image_info = $this->get_featured_image_info($post_id);
+
+    if ($featured_image_info):
+      ?>
+      <img class="entry-featured-image" src="<?= $featured_image_info['src'] ?>" srcset="<?= $featured_image_info['srcset'] ?>"
+           alt="<?= $featured_image_info['alt'] ?>">
+      <?php
+    endif;
+
+  }
+
   public function render_project_links($post_id) {
 
     $project_urls = $this->get_project_urls($post_id);

@@ -1,16 +1,17 @@
 .post-type-archive-project  {
 
-  .hero-container p {
-    margin: 0;
-
-    a {
-      color: white;
-    }
-
+  .hero-container {
     .fa-github-square {
       color: white;
     }
+
+    .project-github-url, .project-project-url {
+      a {
+        color: white;
+      }
+    }
   }
+
 
   .project-github-url {
     margin: $mp2-b;

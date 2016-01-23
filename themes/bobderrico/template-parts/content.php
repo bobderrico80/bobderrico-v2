@@ -27,10 +27,7 @@ $comment_count = get_comments_number($the_id);
     <div class="entry-meta">
       <?php $bobderrico->render_post_time(); ?>
     </div><!-- .entry - meta-->
-    <?php if ($featured_image_info): ?>
-    <img class="entry-featured-image" src="<?= $featured_image_info['src'] ?>" srcset="<?= $featured_image_info['srcset'] ?>"
-         alt="<?= $featured_image_info['alt'] ?>">
-    <?php endif; ?>
+    <?php $bobderrico->render_featured_image($the_id) ?>
 
   </header><!-- .entry-header -->
   <div class="entry-content">

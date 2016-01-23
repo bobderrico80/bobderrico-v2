@@ -120,29 +120,3 @@
 
 }
 
-.post-type-archive-project .hero-container {
-  p {
-    margin: 0;
-
-    a {
-      color: white;
-    }
-  }
-
-  .hero-github-url {
-    margin: $mp2-b;
-  }
-
-  .hero-project-url {
-    margin: $mp2-t;
-  }
-
-  .fa-github-square {
-    color: white;
-    font-size: $fs2;
-  }
-
-  .hero-excerpt {
-    margin: $mp2-b;
-  }
-}

@@ -13,6 +13,7 @@ global $bd_skills;
 $the_id = get_the_ID();
 $permalink = esc_url(get_permalink());
 $title = get_the_title();
+$featured_image_info = $bobderrico->get_featured_image_info($the_id);
 $project_urls = $bobderrico->get_project_urls($the_id);
 ?>
 
@@ -26,6 +27,7 @@ $project_urls = $bobderrico->get_project_urls($the_id);
     <div class="entry-meta">
       <?php $bobderrico->render_project_links($the_id) ?>
     </div><!-- .entry - meta-->
+    <?php $bobderrico->render_featured_image($the_id) ?>
   </header><!-- .entry-header -->
   <div class="entry-content">
     <?php
