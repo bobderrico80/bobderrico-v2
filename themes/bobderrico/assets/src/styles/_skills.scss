@@ -7,3 +7,92 @@
     display: inline-block;
   }
 }
+
+.skills-list {
+  .skills-list-description, .skill-link {
+    margin: $mp2;
+  }
+
+  .skill-link {
+    display: block;
+    margin: $mp5-b;
+    color: $skills-icons-color;
+  }
+
+  .skill-icon-container {
+    text-align: center;
+    line-height: 0;
+
+    i {
+      font-size: 200px;
+      position: relative;
+      left: 20px;
+    }
+
+    i.icon-wordpress, i.icon-php {
+      left: 0;
+    }
+
+
+  }
+
+  .skill-title {
+    text-align: center;
+    font-weight: normal;
+    font-size: $skills-title-size;
+    margin: 0;
+    color: $skills-title-color;
+  }
+
+  .skill-count {
+    display: inline-block;
+    font-size: $skills-count-size;
+    width: $skills-count-size * 1.5;
+    height: $skills-count-size * 1.5;
+    line-height: $skills-count-size * 1.5;
+    background-color: $skills-count-bg-color;
+    border: 1px solid $skills-count-bg-color;
+    color: $skills-count-color;
+    font-weight: bold;
+    border-radius: 100%;
+    margin-left: 5px;
+    position: relative;
+    top: -8px;
+  }
+
+}
+
+.tax-skills .hero-container {
+
+  min-height: $hero-skills-height;
+  color: $hero-skills-color;
+
+  .hero-blank-bg {
+    background-color: $hero-skills-bg-color;
+  }
+
+  .hero-content {
+    background: none;
+    text-shadow: none;
+  }
+
+  i {
+    font-size: 100px;
+  }
+
+  .skill-title {
+    font-size: $fs5;
+    position: relative;
+    top: -15px;
+    left: 10px;
+  }
+
+}
+
+.skills-post-type {
+  font-size: $fs2;
+  margin: $mp2-b;
+  font-style: italic;
+  font-weight: normal;
+}
+

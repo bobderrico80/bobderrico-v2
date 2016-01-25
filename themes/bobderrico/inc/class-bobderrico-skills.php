@@ -17,9 +17,21 @@ class Bobderrico_Skills {
     
     add_action('init', [$this, 'register_skills_taxonomy']);
     add_action('add_meta_boxes', [$this, 'do_skills_meta_box']);
-    
+    add_filter('body_class', [$this, 'add_skills_list_class']);
+    add_action('pre_get_posts', [$this, 'modify_skills_archive_query']);
+
   }
-  
+
+  public function add_skills_list_class($classes) {
+    global $post;
+
+    if ($post->post_name === 'skills') {
+      $classes[] = 'skills-list';
+      return $classes;
+    }
+    return $classes;
+  }
+
   public function render_skills_meta_box($post) {
     
     $all_terms = get_terms('skills', ['hide_empty' => 0]);
@@ -72,6 +84,7 @@ class Bobderrico_Skills {
                       [
                         'label' => __('Skills')
                       ]);
+    register_taxonomy_for_object_type('skills', 'project');
   }
 
   public function render_skills_icons($post_id, $class='') {
@@ -87,16 +100,34 @@ class Bobderrico_Skills {
       <?php foreach ($skills as $skill) : ?>
         <li>
           <a href="<?= get_term_link($skill) ?>" title="<?= $skill->name ?>">
-            <?php if (substr($skill->description, 0, 4) === 'icon') : ?>
-              <i class="<?= $skill->description ?>"></i>
-            <?php else : ?>
-              <?= $skill->name ?>
-            <?php endif; ?>
+            <?php $this->render_skills_icon($skill, true); ?>
           </a>
         </li>
       <?php endforeach; ?>
     </ul>
     <?php
+
+  }
+
+  public function render_skills_icon($skill, $render_name = false) {
+    ?>
+
+      <?php if (substr($skill->description, 0, 4) === 'icon'): ?>
+        <i class="<?= $skill->description ?>"></i>
+      <?php elseif ($render_name): ?>
+        <?= $skill->name ?>
+      <?php endif; ?>
+
+    <?php
+  }
+
+  public function modify_skills_archive_query($query) {
+
+    if (!$query->is_tax('skills')) {
+      return;
+    }
+
+    $query->set('post_type', ['post', 'project']);
 
   }
   

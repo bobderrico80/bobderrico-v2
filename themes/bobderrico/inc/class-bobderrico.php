@@ -90,6 +90,7 @@ class Bobderrico {
         'register_meta_box_cb' => [$this, 'register_project_custom_fields']
       ]
     );
+    register_taxonomy_for_object_type('skills', 'projects');
 
   }
 
@@ -147,6 +148,10 @@ class Bobderrico {
   }
 
   public function alter_home_pagination(&$query) {
+
+    if ($query->is_admin) {
+      return;
+    }
 
     if (!$query->is_home() && !$this->is_altered_post_type($query)) {
       return;
@@ -267,6 +272,16 @@ class Bobderrico {
     </p>
 
     <?php
+  }
+
+  public function get_post_type_text($post) {
+
+    if ($post->post_type === 'project') {
+      return __('Project', 'bobderrico');
+    }
+
+    return __('Blog post', 'bobderrico');
+
   }
 
 }

@@ -1,31 +1,41 @@
 /* Colors */
 
-$main-link-color: #4f4f9e;
+$brand-color-1: #4f4f9e;
+$brand-color-2: orange;
+
+$main-link-color: $brand-color-1;
 
 $header-main-color: white;
 $header-secondary-color: white;
 $header-menu-toggle-color: white;
-$header-menu-toggle-active-color: orange;
-$header-bg-color: #4f4f9e;
+$header-menu-toggle-active-color: $brand-color-2;
+$header-bg-color: $brand-color-1;
 
-$mobile-nav-bg-color: #4f4f9e;
+$mobile-nav-bg-color: $brand-color-1;
 $mobile-nav-link-color: white;
-$mobile-nav-current-link-color: orange;
+$mobile-nav-current-link-color: $brand-color-2;
 $mobile-nav-social-icon-color: #bbbbbb;
 
 $hero-blank-bg-color: black;
 $hero-overlay-color: rgba(0, 0, 0, .65);
 $hero-main-color: white;
-$hero-secondary-color: #4f4f9e;
+$hero-secondary-color: $brand-color-1;
 $hero-text-shadow: 1px 1px 5px black;
-$hero-button-bg-color: #4f4f9e;
+$hero-button-bg-color: $brand-color-1;
 $hero-button-color: white;
 $hero-button-border-color: white;
-$hero-button-active-bg-color: orange;
+$hero-button-active-bg-color: $brand-color-2;
 
 $comments-nested-border: 1px solid grey;
 
-$footer-bg-color: #4f4f9e;
+$skills-icons-color: $brand-color-1;
+$skills-title-color: $brand-color-1;
+$skills-count-color: white;
+$skills-count-bg-color: $brand-color-1;
+$hero-skills-bg-color: $brand-color-2;
+$hero-skills-color: white;
+
+$footer-bg-color: $brand-color-1;
 $footer-main-color: white;
 
 /* Dimensions */
@@ -40,6 +50,10 @@ $hero-skills-size: 1.25em;
 
 $home-skills-size: 1.25em;
 
+$hero-skills-height: 150px;
+$skills-icons-size: 200px;
+$skills-count-size: 12px;
+
 $hero-height-single: 200px;
 
 $footer-height: 30px;
@@ -49,6 +63,7 @@ $mp1: 8px;
 $mp2: 15px;
 $mp3: 30px;
 $mp4: 50px;
+$mp5: 75px;
 
 $mp1-t: $mp1 0 0 0;
 $mp1-b: 0 0 $mp1 0;
@@ -78,6 +93,13 @@ $mp4-l: 0 0 0 $mp4;
 $mp4-v: $mp4 0;
 $mp4-h: 0 $mp4;
 
+$mp5-t: $mp5 0 0 0;
+$mp5-b: 0 0 $mp5 0;
+$mp5-r: 0 $mp5 0 0;
+$mp5-l: 0 0 0 $mp5;
+$mp5-v: $mp5 0;
+$mp5-h: 0 $mp5;
+
 /* Borders */
 $mobile-nav-border: 3px solid white;
 
@@ -86,10 +108,12 @@ $fs1: .8em;
 $fs2: 1em;
 $fs3: 1.5em;
 $fs4: 2em;
+$fs5: 3em;
 
 $mobile-nav-font-size: $fs4;
 
 $hero-title-font-size: $fs4;
+$skills-title-size: $fs3;
 $footer-font-size: $fs1;
 
 
