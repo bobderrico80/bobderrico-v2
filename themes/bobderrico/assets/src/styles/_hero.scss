@@ -88,35 +88,4 @@
   margin: $mp2-t;
 }
 
-.single-post {
-  .hero-container {
-    min-height: $hero-height-single;
-  }
-
-  .hero-content {
-    position: absolute;
-  }
-
-  .hero-skills, .hero-date {
-    display: block;
-    float: none;
-  }
-
-  .hero-skills {
-    float: left;
-  }
-
-  .hero-comment-count {
-    float: right;
-
-    a {
-      color: white;
-    }
-  }
-
-  .hero-title, .hero-skills, .hero-date, .hero-comment-count {
-    margin: $mp2-b;
-  }
-
-}
 
