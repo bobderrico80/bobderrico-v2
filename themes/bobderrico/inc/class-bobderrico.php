@@ -52,74 +52,92 @@ class Bobderrico {
 
   public function register_custom_post_types() {
 
-    $this->register_project_post_type();
+    $this->register_custom_post_type('project', 'projects', 'Project portfolio items', 'dashicons-welcome-widgets-menu');
+    $this->register_custom_post_type('job', 'jobs', 'Professional jobs held', 'dashicons-businessman');
 
   }
 
-  private function register_project_post_type() {
+  private function register_custom_post_type($singular_name, $plural_name, $description, $icon) {
 
-    register_post_type('project',
-      [
-        'labels' => [
-          'name' => _x('Projects', 'post type general name', 'bobderrico'),
-          'singular_name' => _x('Project', 'post type singular name', 'bobderrico'),
-          'add_new' => _x('Add New', 'project', 'bobderrico'),
-          'add_new_item' => __('Add New Project', 'bobderrico'),
-          'new_item' => __('New Project', 'bobderrico'),
-          'edit_item' => __('Edit Project', 'bobderrico'),
-          'view_item' => __('View Project', 'bobderrico'),
-          'all_items' => __('All Projects', 'bobderrico'),
-          'search_items' => __('Search Projects', 'bobderrico'),
-          'not_found' => __('No projects found.', 'bobderrico'),
-          'not_found_in_trash' => __('No projects found in trash', 'bobderrico')
-        ],
-        'description' => __('Project portfolio items', 'bobderrico'),
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => ['slug' => 'projects'],
-        'capability_type' => 'post',
-        'has_archive' => true,
-        'hierarchical' => false,
-        'menu_position' => 20,
-        'taxonomies' => ['skills'],
-        'menu_icon' => 'dashicons-welcome-widgets-menus',
-        'supports' => ['title', 'editor', 'thumbnail'],
-        'register_meta_box_cb' => [$this, 'register_project_custom_fields']
-      ]
+    register_post_type($singular_name,
+                       [
+                           'labels' => [
+                               'name' => _x(ucfirst($plural_name), 'post type general name', 'bobderrico'),
+                               'singular_name' => _x(ucfirst($singular_name), 'post type singular name', 'bobderrico'),
+                               'add_new' => _x('Add New', $singular_name, 'bobderrico'),
+                               'add_new_item' => __('Add New ' . ucfirst($singular_name), 'bobderrico'),
+                               'new_item' => __('New ' . ucfirst($singular_name), 'bobderrico'),
+                               'edit_item' => __('Edit ' . ucfirst($singular_name), 'bobderrico'),
+                               'view_item' => __('View ' . ucfirst($singular_name), 'bobderrico'),
+                               'all_items' => __('All ' . ucfirst($plural_name), 'bobderrico'),
+                               'search_items' => __('Search ' . ucfirst($plural_name), 'bobderrico'),
+                               'not_found' => __('No ' . $plural_name . ' found.', 'bobderrico'),
+                               'not_found_in_trash' => __('No '. $plural_name . ' found in trash', 'bobderrico')
+                           ],
+                           'description' => __($description, 'bobderrico'),
+                           'public' => true,
+                           'publicly_queryable' => true,
+                           'show_ui' => true,
+                           'show_in_menu' => true,
+                           'query_var' => true,
+                           'rewrite' => ['slug' => $plural_name],
+                           'capability_type' => 'post',
+                           'has_archive' => true,
+                           'hierarchical' => false,
+                           'menu_position' => 20,
+                           'taxonomies' => ['skills'],
+                           'menu_icon' => $icon,
+                           'supports' => ['title', 'editor', 'thumbnail'],
+                           'register_meta_box_cb' => [$this, 'register_custom_post_custom_fields']
+                       ]
     );
-    register_taxonomy_for_object_type('skills', 'projects');
 
   }
 
-  public function register_project_custom_fields() {
+  public function register_custom_post_custom_fields($post) {
 
-    add_meta_box('project-info', __('Project Info', 'bobderrico'), [$this, 'render_project_custom_fields'], 'project',
-                 'normal', 'default');
+    if ($post->post_type === 'project') {
+      $this->register_custom_fields('project_info', 'Project Info', 'project', ['project_url', 'github_url']);;
+    } elseif ($post->post_type === 'job') {
+      $this->register_custom_fields('job_info', 'Job Info', 'job', ['title', 'location', 'start_date', 'end_date']);
+    }
 
   }
 
-  public function render_project_custom_fields($post) {
+  private function register_custom_fields($name, $display_name, $screen, $meta_keys) {
 
-    require('forms/project-custom-fields.php');
+    add_meta_box($name, __($display_name, 'bobderrico'), [$this, 'render_custom_metabox'], $screen, 'normal', 'default',
+                 ['meta_keys' => $meta_keys, 'name' => $screen]);
+
+  }
+
+  public function render_custom_metabox($post, $args) {
+
+    $name = $args['args']['name'];
+    $values = [];
+
+    foreach ($args['args']['meta_keys'] as $key) {
+      $values[$key] = get_post_meta($post->ID, '_bd_' . $key, true);
+    }
+
+    wp_nonce_field('bobderrico_save_' . $name, 'bobderrico_' . $name . '_nonce');
+    require('forms/' . $name . '-custom-fields.php');
 
   }
 
   public function save_custom_fields($post_id) {
 
-    $this->save_project($post_id);
-
-  }
-
-  private function save_project($post_id) {
-
-    if (!isset($_POST['bobderrico_project_info_nonce'])) {
+    if (!isset($_POST['post_type'])) {
       return;
     }
 
-    if (!wp_verify_nonce($_POST['bobderrico_project_info_nonce'], 'bobderrico_save_project_info')) {
+    $name = $_POST['post_type'];
+
+    if (!isset($_POST['bobderrico_' . $name . '_nonce'])) {
+      return;
+    }
+
+    if (!wp_verify_nonce($_POST['bobderrico_' . $name . '_nonce'], 'bobderrico_save_' . $name)) {
       return;
     }
 
@@ -127,23 +145,17 @@ class Bobderrico {
       return;
     }
 
-    if (isset($_POST['post_type']) && 'project' === $_POST['post_type'] ) {
-
-      if (!current_user_can('edit_post', $post_id)) {
-        return;
-      }
-
-    }
-
-    if (!isset($_POST['project_url']) || !isset($_POST['github_url'])) {
+    if (!current_user_can('edit_post', $post_id)) {
       return;
     }
 
-    $project_url = sanitize_text_field($_POST['project_url']);
-    $github_url = sanitize_text_field($_POST['github_url']);
+    if (!isset($_POST['values'])) {
+      return;
+    }
 
-    update_post_meta($post_id, '_bd_project_url', $project_url);
-    update_post_meta($post_id, '_bd_github_url', $github_url);
+    foreach ($_POST['values'] as $key => $value) {
+      update_post_meta($post_id, '_bd_' . $key, $value);
+    }
 
   }
 

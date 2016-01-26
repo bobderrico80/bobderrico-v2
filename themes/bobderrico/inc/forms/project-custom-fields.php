@@ -1,9 +1,3 @@
-<?php
-wp_nonce_field('bobderrico_save_project_info', 'bobderrico_project_info_nonce');
-$project_url = get_post_meta($post->ID, '_bd_project_url', true);
-$github_url = get_post_meta($post->ID, '_bd_github_url', true);
-?>
-
 <table class="form-table">
   <tbody>
     <tr>
@@ -13,7 +7,7 @@ $github_url = get_post_meta($post->ID, '_bd_github_url', true);
         </label>
       </th>
       <td>
-        <input class="regular-text" type="url" id="project_url" name="project_url" value="<?= esc_attr($project_url) ?>" />
+        <input class="regular-text" type="url" id="project_url" name="values[project_url]" value="<?= esc_attr($values['project_url']) ?>" />
       </td>
     </tr>
     <tr>
@@ -23,7 +17,7 @@ $github_url = get_post_meta($post->ID, '_bd_github_url', true);
         </label>
       </th>
       <td>
-        <input class="regular-text" type="url" id="github_url" name="github_url" value="<?= esc_attr($github_url) ?>" />
+        <input class="regular-text" type="url" id="github_url" name="values[github_url]" value="<?= esc_attr($values['github_url']) ?>" />
       </td>
     </tr>
   </tbody>
