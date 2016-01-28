@@ -1,0 +1,44 @@
+.job-company, .job-location, .job-timeframe {
+  margin: 0;
+}
+
+.job-location {
+  font-weight: bold;
+  margin: $mp2-t;
+}
+
+.job-timeframe {
+  font-style: italic;
+}
+
+.post-type-archive-job .entry-meta {
+  margin: $mp2-b;
+}
+
+.single-job .hero-container {
+  min-height: $hero-job-height;
+  color: $hero-job-color;
+
+  .hero-blank-bg {
+    background-color: $hero-job-bg-color;
+  }
+
+  .hero-content {
+    background: none;
+    text-shadow: none;
+  }
+
+  a {
+    color: white;
+  }
+
+  .entry-title {
+    margin: $mp3-t;
+    line-height: normal;
+  }
+
+  .skills-icons {
+    margin: $mp2-t;
+  }
+
+}

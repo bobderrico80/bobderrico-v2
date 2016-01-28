@@ -7,7 +7,8 @@
  */
 class Bobderrico {
 
-  private $excerpt_length;
+  private $project_excerpt_length;
+  private $home_excerpt_length;
   private $excerpt_more;
   private $altered_post_type_archives;
 
@@ -26,6 +27,7 @@ class Bobderrico {
     add_filter('excerpt_length', [$this, 'set_excerpt_length']);
     add_filter('excerpt_more', [$this, 'set_excerpt_more']);
     add_action('pre_get_posts', [$this, 'alter_home_pagination']);
+    add_action('pre_get_posts', [$this, 'alter_job_sort_order']);
     add_filter('found_posts', [$this, 'adjust_offset_pagination'], 1, 2);
     add_action('init', [$this, 'register_custom_post_types']);
     add_action('save_post', [$this, 'save_custom_fields']);
@@ -52,7 +54,7 @@ class Bobderrico {
 
   public function register_custom_post_types() {
 
-    $this->register_custom_post_type('project', 'projects', 'Project portfolio items', 'dashicons-welcome-widgets-menu');
+    $this->register_custom_post_type('project', 'projects', 'Project portfolio items', 'dashicons-welcome-widgets-menus');
     $this->register_custom_post_type('job', 'jobs', 'Professional jobs held', 'dashicons-businessman');
 
   }
@@ -99,7 +101,7 @@ class Bobderrico {
     if ($post->post_type === 'project') {
       $this->register_custom_fields('project_info', 'Project Info', 'project', ['project_url', 'github_url']);;
     } elseif ($post->post_type === 'job') {
-      $this->register_custom_fields('job_info', 'Job Info', 'job', ['title', 'location', 'start_date', 'end_date']);
+      $this->register_custom_fields('job_info', 'Job Info', 'job', ['company', 'location', 'url', 'start_date', 'end_date']);
     }
 
   }
@@ -184,6 +186,22 @@ class Bobderrico {
 
   }
 
+  public function alter_job_sort_order($query) {
+
+    if ($query->is_admin) {
+      return;
+    }
+
+    if ($query->get('post_type') !== 'job') {
+      return;
+    }
+
+    $query->set('meta_key', '_bd_start_date');
+    $query->set('orderby', 'meta_value');
+    $query->set('order', 'DESC');
+
+  }
+
   private function is_altered_post_type($query) {
 
     foreach ($this->altered_post_types as $altered_post_type) {
@@ -245,10 +263,36 @@ class Bobderrico {
   public function get_project_urls($post_id) {
 
     $project_urls = [];
-    $project_urls['github'] = esc_url(get_post_meta(get_the_id(), '_bd_github_url', true));
-    $project_urls['project'] = esc_url(get_post_meta(get_the_id(), '_bd_project_url', true));
+    $project_urls['github'] = esc_url(get_post_meta($post_id, '_bd_github_url', true));
+    $project_urls['project'] = esc_url(get_post_meta($post_id, '_bd_project_url', true));
 
     return $project_urls;
+
+  }
+
+  public function get_job_info($post_id) {
+
+    $job_info = [];
+    $job_info['location'] = get_post_meta($post_id, '_bd_location', true);
+    $job_info['url'] = esc_url(get_post_meta($post_id, '_bd_url', true));
+    $job_info['start_date'] = $this->convert_date(get_post_meta($post_id, '_bd_start_date', true));
+    $job_info['end_date'] = $this->convert_date(get_post_meta($post_id, '_bd_end_date', true), 'present');
+    $job_info['company'] = get_post_meta($post_id, '_bd_company', true);
+
+    return $job_info;
+
+  }
+
+  private function convert_date($date_string, $default = false) {
+
+    if (!$date_string) {
+      return $default;
+    }
+
+    $wp_date_format = get_option('date_format');
+    $date = new DateTime($date_string);
+
+    return $date->format($wp_date_format);
 
   }
 
@@ -284,6 +328,24 @@ class Bobderrico {
     </p>
 
     <?php
+  }
+
+  public function render_job_info($post_id) {
+
+    $job_info = $this->get_job_info($post_id);
+
+    ?>
+
+    <h3 class="job-company">
+      <a href="<?= $job_info['url'] ?>" target="_blank">
+        <?= $job_info['company'] ?>
+      </a>
+    </h3>
+    <p class="job-location"><?= $job_info['location'] ?></p>
+    <p class="job-timeframe"><?= $job_info['start_date'] ?> &mdash; <?= $job_info['end_date'] ?></p>
+
+    <?php
+
   }
 
   public function get_post_type_text($post) {

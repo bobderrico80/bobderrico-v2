@@ -85,6 +85,7 @@ class Bobderrico_Skills {
                         'label' => __('Skills')
                       ]);
     register_taxonomy_for_object_type('skills', 'project');
+    register_taxonomy_for_object_type('skills', 'job');
   }
 
   public function render_skills_icons($post_id, $class='') {

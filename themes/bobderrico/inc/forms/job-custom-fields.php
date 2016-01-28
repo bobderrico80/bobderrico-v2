@@ -2,12 +2,12 @@
   <tbody>
     <tr>
       <th scope="row">
-        <label for="title">
-          <?= __('Job Title', 'bobderrico'); ?>
+        <label for="company">
+          <?= __('Company', 'bobderrico'); ?>
         </label>
       </th>
       <td>
-        <input class="regular-text" type="text" id="title" name="values[title]" value="<?= esc_attr($values['title']) ?>" />
+        <input class="regular-text" type="text" id="company" name="values[company]" value="<?= esc_attr($values['company']) ?>" />
       </td>
     </tr>
     <tr>
@@ -18,6 +18,16 @@
       </th>
       <td>
         <input class="regular-text" type="text" id="location" name="values[location]" value="<?= esc_attr($values['location']) ?>" />
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <label for="url">
+          <?= __('URL', 'bobderrico'); ?>
+        </label>
+      </th>
+      <td>
+        <input class="regular-text" type="url" id="url" name="values[url]" value="<?= esc_attr($values['url']) ?>" />
       </td>
     </tr>
     <tr>
