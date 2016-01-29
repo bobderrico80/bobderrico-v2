@@ -16,7 +16,7 @@ $mobile-nav-link-color: white;
 $mobile-nav-current-link-color: $brand-color-2;
 $mobile-nav-social-icon-color: #bbbbbb;
 
-$hero-blank-bg-color: black;
+$hero-blank-bg-color: $brand-color-2;
 $hero-overlay-color: rgba(0, 0, 0, .65);
 $hero-main-color: white;
 $hero-secondary-color: $brand-color-1;
@@ -32,10 +32,10 @@ $skills-icons-color: $brand-color-1;
 $skills-title-color: $brand-color-1;
 $skills-count-color: white;
 $skills-count-bg-color: $brand-color-1;
-$hero-skills-bg-color: $brand-color-2;
+$hero-skills-bg: $brand-color-2;
 $hero-skills-color: white;
 
-$hero-job-bg-color: $brand-color-2;
+$hero-job-bg: $brand-color-2;
 $hero-job-color: white;
 $hero-job-link-color: white;
 
@@ -54,6 +54,7 @@ $hero-skills-size: 1.25em;
 
 $home-skills-size: 1.25em;
 
+$hero-skills-list-height: 200px;
 $hero-skills-height: 150px;
 $skills-icons-size: 200px;
 $skills-count-size: 12px;
@@ -61,6 +62,7 @@ $skills-count-size: 12px;
 $hero-job-height: 260px;
 
 $hero-height-single: 200px;
+$hero-height-page: 125px;
 
 $footer-height: 30px;
 

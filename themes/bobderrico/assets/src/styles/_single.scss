@@ -28,6 +28,7 @@
   .hero-title, .hero-skills, .hero-date, .hero-comment-count {
     margin: $mp2-b;
   }
+
   .entry-content, .entry-footer, .post-navigation, .comments-area {
     margin: $mp2-h;
   }
@@ -49,6 +50,17 @@
     margin: $mp4-b;
   }
 
+}
 
+.page {
+  .hero-container {
+    min-height: $hero-height-page;
+    padding: $mp3-t;
+  }
+
+  .hero-content {
+    position: absolute;
+    padding: $mp3 $mp2;
+  }
 
 }

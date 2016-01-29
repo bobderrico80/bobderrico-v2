@@ -24,15 +24,14 @@ $comment_count = get_comments_number($the_id);
         <?= $title ?>
       </a>
     </h2>
-    <h3 class="skills-post-type">
-      <?= $bobderrico->get_post_type_text($post); ?>
-    </h3>
+    <?php $bobderrico->render_post_type_text($post); ?>
     <div class="entry-meta">
       <?php if ($post->post_type === 'post'): ?>
         <?php $bobderrico->render_post_time(); ?>
-      <?php endif; ?>
-      <?php if ($post->post_type === 'project'): ?>
+      <?php elseif ($post->post_type === 'project'): ?>
         <?php $bobderrico->render_project_links($the_id) ?>
+      <?php elseif ($post->post_type === 'job'): ?>
+        <?php $bobderrico->render_job_info($the_id) ?>
       <?php endif; ?>
     </div><!-- .entry - meta-->
     <?php $bobderrico->render_featured_image($the_id) ?>

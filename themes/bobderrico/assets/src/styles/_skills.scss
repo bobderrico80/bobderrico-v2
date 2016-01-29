@@ -13,6 +13,10 @@
     margin: $mp2;
   }
 
+  .hero-container {
+    min-height: $hero-skills-list-height;
+  }
+
   .skill-link {
     display: block;
     margin: $mp5-b;
@@ -62,32 +66,34 @@
 
 }
 
-.tax-skills .hero-container {
-
-  min-height: $hero-skills-height;
-  color: $hero-skills-color;
-
-  .hero-blank-bg {
-    background-color: $hero-skills-bg-color;
+.tax-skills {
+  .entry-meta {
+    margin: $mp2-b;
   }
 
-  .hero-content {
-    background: none;
-    text-shadow: none;
-  }
+  .hero-container {
 
-  i {
-    font-size: 100px;
-  }
+    min-height: $hero-skills-height;
 
-  .skill-title {
-    font-size: $fs5;
-    position: relative;
-    top: -15px;
-    left: 10px;
-  }
+    .hero-blank-bg {
+      background: $hero-skills-bg;
+    }
 
+
+    i {
+      font-size: 100px;
+    }
+
+    .skill-title {
+      font-size: $fs5;
+      position: relative;
+      top: -15px;
+      left: 10px;
+    }
+  }
 }
+
+
 
 .skills-post-type {
   font-size: $fs2;

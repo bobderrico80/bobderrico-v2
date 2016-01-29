@@ -128,7 +128,7 @@ class Bobderrico_Skills {
       return;
     }
 
-    $query->set('post_type', ['post', 'project']);
+    $query->set('post_type', ['post', 'project', 'job']);
 
   }
   

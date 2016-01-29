@@ -24,6 +24,7 @@ get_header(); ?>
           <?php
         endif;
 
+        get_template_part('template-parts/hero', 'job');
         /* Start the Loop */
         while (have_posts()) : the_post();
 

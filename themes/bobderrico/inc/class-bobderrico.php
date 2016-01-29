@@ -10,14 +10,15 @@ class Bobderrico {
   private $project_excerpt_length;
   private $home_excerpt_length;
   private $excerpt_more;
-  private $altered_post_type_archives;
+  private $altered_post_types;
 
   function __construct() {
 
     $this->home_excerpt_length = 30;
     $this->project_excerpt_length = 20;
+    $this->job_excerpt_length = 20;
     $this->excerpt_more = '...';
-    $this->altered_post_types = ['post', 'project'];
+    $this->altered_post_types = ['post', 'project', 'job'];
     $this->register_hooks();
 
   }
@@ -42,6 +43,10 @@ class Bobderrico {
 
     if (is_post_type_archive('project')) {
       return $this->project_excerpt_length;
+    }
+
+    if (is_post_type_archive('job')) {
+      return $this->job_excerpt_length;
     }
 
   }
@@ -354,7 +359,27 @@ class Bobderrico {
       return __('Project', 'bobderrico');
     }
 
+    if ($post->post_type === 'job') {
+      return false;
+    }
+
     return __('Blog post', 'bobderrico');
+
+  }
+
+  public function render_post_type_text($post) {
+
+    $text = $this->get_post_type_text($post);
+
+    if ($text) {
+      ?>
+
+      <h3 class="skills-post-type">
+        <?= $text ?>
+      </h3>
+
+      <?php
+    }
 
   }
 

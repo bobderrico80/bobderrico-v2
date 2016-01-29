@@ -15,17 +15,11 @@
   margin: $mp2-b;
 }
 
-.single-job .hero-container {
+.single-job .hero-container, .post-type-archive-job .hero-container {
   min-height: $hero-job-height;
-  color: $hero-job-color;
 
   .hero-blank-bg {
-    background-color: $hero-job-bg-color;
-  }
-
-  .hero-content {
-    background: none;
-    text-shadow: none;
+    background: $hero-job-bg;
   }
 
   a {
