@@ -11,6 +11,7 @@ class Bobderrico {
   private $home_excerpt_length;
   private $excerpt_more;
   private $altered_post_types;
+  private $custom_post_types = [];
 
   function __construct() {
 
@@ -32,6 +33,8 @@ class Bobderrico {
     add_filter('found_posts', [$this, 'adjust_offset_pagination'], 1, 2);
     add_action('init', [$this, 'register_custom_post_types']);
     add_action('save_post', [$this, 'save_custom_fields']);
+    add_filter('wp_list_pages', [$this, 'add_custom_post_archives_to_menu']);
+    add_filter('wp_nav_menu_items', [$this, 'add_custom_post_archives_to_menu']);
 
   }
 
@@ -65,6 +68,12 @@ class Bobderrico {
   }
 
   private function register_custom_post_type($singular_name, $plural_name, $description, $icon) {
+
+    $this->custom_post_types[] = [
+      'name' => _x(ucfirst($plural_name), 'post type general name', 'bobderrico'),
+      'slug' => $plural_name,
+      'post_type' => $singular_name
+    ];
 
     register_post_type($singular_name,
                        [
@@ -382,5 +391,29 @@ class Bobderrico {
     }
 
   }
+
+  public function add_custom_post_archives_to_menu($items) {
+
+    global $wp_query;
+    $item_array = explode('</li>', $items);
+    $class = 'menu-item menu-item-type-post_type menu-item-object-page';
+    $insert_after_item = 1;
+
+    foreach ($this->custom_post_types as $link) {
+      if (isset($wp_query->query_vars['post_type']) && $wp_query->query_vars['post_type'] === $link['post_type']) {
+        $active_class = 'current-menu-item';
+      } else {
+        $active_class = '';
+      }
+
+      $item = '<li class="' . $class . ' ' . $active_class  . '"><a href="' . site_url() . '/' . $link['slug'] . '">' . $link['name'] . '</a>';
+      array_splice($item_array, $insert_after_item, 0, $item);
+      $insert_after_item++;
+    }
+
+    return implode('</li>', $item_array);
+
+  }
+
 
 }

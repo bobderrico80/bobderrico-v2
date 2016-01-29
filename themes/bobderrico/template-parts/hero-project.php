@@ -38,7 +38,7 @@ if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
     <?php endif; ?>
       <header class="hero-content">
         <h1 class="hero-title">
-            <?= get_the_title() ?>
+            Featured Project: <br class="mobile-br-only"><?= get_the_title() ?>
         </h1>
         <?php $bobderrico->render_project_links($the_id) ?>
         <p class="hero-excerpt"><?= get_the_excerpt() ?></p>
