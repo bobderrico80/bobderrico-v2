@@ -11,6 +11,7 @@
 
 <section class="no-results not-found">
   <header class="page-header">
+    <p><i class="fa fa-meh-o"></i></p>
     <h1 class="page-title"><?php esc_html_e('Nothing Found', 'bobderrico'); ?></h1>
   </header><!-- .page-header -->
 

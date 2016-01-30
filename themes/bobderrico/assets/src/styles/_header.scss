@@ -83,6 +83,7 @@
 
   .social-buttons {
     font-size: $mobile-nav-social-icon-size;
+    overflow: hidden;
 
     a {
       color: $mobile-nav-social-icon-color;
@@ -92,6 +93,10 @@
       float: left;
       margin-right: $mp2;
     }
+  }
+
+  #search-form {
+    margin: $mp2-t;
   }
 }
 

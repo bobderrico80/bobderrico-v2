@@ -1,4 +1,4 @@
-.home, .archive {
+.home, .archive, .search-results {
 
   article, .posts-navigation {
     margin: $mp4 $mp2;
@@ -6,6 +6,10 @@
 
   header h2 {
     font-size: $fs3;
+    margin: 0;
+  }
+
+  .entry-content {
     margin: 0;
   }
 

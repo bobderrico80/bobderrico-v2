@@ -66,6 +66,7 @@
                   </a>
                 </li>
               </ul>
+              <?php get_search_form() ?>
             </div>
           </nav><!-- #site-navigation -->
         </header><!-- #masthead -->
