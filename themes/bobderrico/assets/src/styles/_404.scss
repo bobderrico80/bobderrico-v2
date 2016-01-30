@@ -1,0 +1,12 @@
+.error-404 {
+  margin: $mp5 $mp2;
+  text-align: center;
+
+  .fa-warning {
+    font-size: $error-icon-size;
+  }
+
+  .search-form {
+    margin: $mp4-t;
+  }
+}

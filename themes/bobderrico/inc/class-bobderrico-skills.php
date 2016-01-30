@@ -25,7 +25,8 @@ class Bobderrico_Skills {
   public function add_skills_list_class($classes) {
     global $post;
 
-    if ($post->post_name === 'skills') {
+    if ($post && $post->post_name === 'skills') {
+
       $classes[] = 'skills-list';
       return $classes;
     }
