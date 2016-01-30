@@ -16,14 +16,10 @@
 }
 
 .single-job .hero-container, .post-type-archive-job .hero-container {
-  min-height: $hero-job-height;
-
-  .hero-blank-bg {
-    background: $hero-job-bg;
-  }
+  min-height: $job-hero-height;
 
   a {
-    color: white;
+    color: $hero-link-color;
   }
 
   .entry-title {

@@ -16,13 +16,6 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
       <?php get_template_part('template-parts/hero', 'skills-list') ?>
-      <div class="skills-list-description">
-        <?php
-          echo wp_is_mobile() ? __('Tap', 'bobderrico') : __('Click', 'bobderrico');
-          echo ' ';
-          echo __('a skill to view relevant projects, work experience, and blog posts.', 'bobderrico');
-        ?>
-      </div>
       <?php
 
       if (count($skills)) :

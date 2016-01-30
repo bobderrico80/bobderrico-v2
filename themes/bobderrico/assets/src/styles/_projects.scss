@@ -2,12 +2,12 @@
 
   .hero-container {
     .fa-github-square {
-      color: white;
+      color: $hero-main-color;
     }
 
     .project-github-url, .project-project-url {
       a {
-        color: white;
+        color: $hero-main-color;
       }
     }
   }

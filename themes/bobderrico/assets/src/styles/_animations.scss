@@ -1,0 +1,7 @@
+/* Speeds */
+$animation-speed-fast: 250ms;
+$animation-speed-medium: 500ms;
+$animation-speed-slow: 1s;
+
+/* Animations */
+$mobile-nav-animation: all $animation-speed-fast ease-in-out;

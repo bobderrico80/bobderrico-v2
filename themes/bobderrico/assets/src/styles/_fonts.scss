@@ -1,0 +1,21 @@
+/* Get Google fonts */
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+body {
+  font-family: 'News Cycle', sans-serif;
+  font-size: 18px;
+  line-height: normal;
+}
+
+/* General Font Sizes */
+$fs1: .75em;
+$fs2: 1em;
+$fs3: 1.5em;
+$fs4: 2em;
+$fs5: 3em;
+
+/* Components */
+$mobile-nav-font-size: $fs4;
+$hero-title-font-size: $fs4;
+$skills-title-size: $fs3;
+$footer-font-size: $fs1;

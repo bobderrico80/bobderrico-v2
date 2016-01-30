@@ -14,7 +14,7 @@
   }
 
   .hero-container {
-    min-height: $hero-skills-list-height;
+    min-height: $skills-list-hero-height;
   }
 
   .skill-link {
@@ -73,12 +73,7 @@
 
   .hero-container {
 
-    min-height: $hero-skills-height;
-
-    .hero-blank-bg {
-      background: $hero-skills-bg;
-    }
-
+    min-height: $skills-hero-height;
 
     i {
       font-size: 100px;

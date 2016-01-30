@@ -4,6 +4,7 @@
 
 html, body, .site {
   height: 100%;
+  color: $black;
 }
 
 .page-wrap {
@@ -21,7 +22,14 @@ html, body, .site {
   clear: both;
 }
 
-button, input[type="submit"] {
+.btn-link {
+  display: inline-block;
+  padding: $mp1;
+  border: 1px solid $white;
+  border-radius: 3px;
+}
+
+button, input[type="submit"], .btn-link {
   box-shadow: none;
   text-shadow: none;
   font-size: $fs2;
@@ -52,7 +60,7 @@ ul, ol {
 
 blockquote {
   font-style: italic;
-  border-left: 1px solid grey;
+  border-left: 1px solid $grey;
   margin: $mp2-l;
   padding: $mp2-l;
 }

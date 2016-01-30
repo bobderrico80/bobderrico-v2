@@ -1,0 +1,62 @@
+/* COLORS! */
+
+/* Palleton Generated Colors http://paletton.com/#uid=23B0u0k++u3LdZB+VKE+Xoe+uie */
+$brand-main-color-xl: #0A7CFB;
+$brand-main-color-l: #0063D2;
+$brand-main-color: #004A9C;
+$brand-main-color-d: #003C7E;
+$brand-main-color-xd: #002D5F;
+
+$brand-accent-color-l: #FF9A00;
+$brand-accent-color: #F09100;
+$brand-accent-color-d: #C17500;
+$brand-accent-color-xd: #915800;
+
+/* Custom Standard Colors */
+$black: #333333;
+$grey-l: #BBBBBB;
+$grey: #808080;
+$white: #FFFFFF;
+$overlay: rgba(0, 0, 0, .65);
+
+/* Component Colors */
+$main-link-color: $brand-main-color;
+
+$header-main-color: $white;
+$header-secondary-color: $white;
+$header-menu-toggle-color: $white;
+$header-menu-toggle-active-color: $brand-accent-color-l;
+$header-bg-color: $brand-main-color;
+
+$mobile-nav-bg-color: $brand-main-color-xd;
+$mobile-nav-border: 1px solid $brand-main-color-xd;
+$mobile-nav-link-color: $white;
+$mobile-nav-current-link-color: $brand-accent-color-l;
+$mobile-nav-social-icon-color: $grey-l;
+
+$hero-blank-bg-color: url('/wp-content/themes/bobderrico/assets/dist/images/background-xs.jpg');
+$hero-overlay-color: $overlay;
+$hero-main-color: $white;
+$hero-link-color: $white;
+$hero-secondary-color: $brand-accent-color;
+$hero-text-shadow: 1px 1px 5px $black;
+$hero-button-bg-color: $brand-main-color;
+$hero-button-color: $white;
+$hero-button-border-color: $white;
+$hero-button-active-bg-color: $brand-accent-color;
+
+$comments-nested-border: 1px solid $grey;
+
+$skills-icons-color: $brand-main-color;
+$skills-title-color: $brand-main-color;
+$skills-count-color: $white;
+$skills-count-bg-color: $brand-main-color;
+$skills-hero-bg: $hero-blank-bg-color;
+$skills-hero-color: $white;
+
+$job-hero-bg: $hero-blank-bg-color;
+$job-hero-color: $white;
+$job-hero-link-color: $white;
+
+$footer-bg-color: $brand-main-color;
+$footer-main-color: $white;

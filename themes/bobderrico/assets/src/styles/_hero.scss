@@ -8,7 +8,7 @@
 
 .hero-container {
   width: 100%;
-  min-height: $hero-height-home;
+  min-height: $home-hero-height;
   position: relative;
   margin: $mp3-b;
 }
@@ -26,6 +26,8 @@
   @include hero-component();
   z-index: 0;
   background: $hero-blank-bg-color;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .hero-img-bg {
@@ -57,19 +59,27 @@
   color: $hero-main-color;
 }
 
-.btn-hero-more {
-  color: $hero-button-color;
+.btn-hero-more  {
+
   background-color: $hero-button-bg-color;
   border-color: $hero-button-border-color;
 
   &:hover {
-    background-color: orange;
+    background-color: $hero-secondary-color;
   }
 
 }
 
+a.btn-hero-more {
+  color: $hero-button-color;
+}
+
+.hero-meta {
+  overflow: hidden;
+}
+
 .hero-skills {
-  font-size: $hero-skills-size;
+  font-size: $skills-hero-size;
   float: left;
   margin: $mp2-t;
 

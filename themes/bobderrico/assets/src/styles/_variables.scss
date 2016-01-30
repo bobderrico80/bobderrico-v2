@@ -1,117 +1,10 @@
 /* Colors */
 
-$brand-color-1: #4f4f9e;
-$brand-color-2: orange;
-
-$main-link-color: $brand-color-1;
-
-$header-main-color: white;
-$header-secondary-color: white;
-$header-menu-toggle-color: white;
-$header-menu-toggle-active-color: $brand-color-2;
-$header-bg-color: $brand-color-1;
-
-$mobile-nav-bg-color: $brand-color-1;
-$mobile-nav-link-color: white;
-$mobile-nav-current-link-color: $brand-color-2;
-$mobile-nav-social-icon-color: #bbbbbb;
-
-$hero-blank-bg-color: $brand-color-2;
-$hero-overlay-color: rgba(0, 0, 0, .65);
-$hero-main-color: white;
-$hero-secondary-color: $brand-color-1;
-$hero-text-shadow: 1px 1px 5px black;
-$hero-button-bg-color: $brand-color-1;
-$hero-button-color: white;
-$hero-button-border-color: white;
-$hero-button-active-bg-color: $brand-color-2;
-
-$comments-nested-border: 1px solid grey;
-
-$skills-icons-color: $brand-color-1;
-$skills-title-color: $brand-color-1;
-$skills-count-color: white;
-$skills-count-bg-color: $brand-color-1;
-$hero-skills-bg: $brand-color-2;
-$hero-skills-color: white;
-
-$hero-job-bg: $brand-color-2;
-$hero-job-color: white;
-$hero-job-link-color: white;
-
-$footer-bg-color: $brand-color-1;
-$footer-main-color: white;
 
 /* Dimensions */
-$header-height: 105px;
-$header-menu-toggle-size: 40px;
 
-$mobile-nav-width: 75%;
-$mobile-nav-social-icon-size: 16px;
-
-$hero-height-home: 300px;
-$hero-skills-size: 1.25em;
-
-$home-skills-size: 1.25em;
-
-$hero-skills-list-height: 200px;
-$hero-skills-height: 150px;
-$skills-icons-size: 200px;
-$skills-count-size: 12px;
-
-$hero-job-height: 260px;
-
-$hero-height-single: 200px;
-$hero-height-page: 125px;
-
-$error-icon-size: 150px;
-
-$footer-height: 30px;
-
-/* Margin/Padding */
-$mp1: 8px;
-$mp2: 15px;
-$mp3: 30px;
-$mp4: 50px;
-$mp5: 75px;
-
-$mp1-t: $mp1 0 0 0;
-$mp1-b: 0 0 $mp1 0;
-$mp1-l: 0 $mp1 0 0;
-$mp1-r: 0 0 0 $mp1;
-$mp1-v: $mp1 0;
-$mp1-h: 0 $mp1;
-
-$mp2-t: $mp2 0 0 0;
-$mp2-b: 0 0 $mp2 0;
-$mp2-r: 0 $mp2 0 0;
-$mp2-l: 0 0 0 $mp2;
-$mp2-v: $mp2 0;
-$mp2-h: 0 $mp2;
-
-$mp3-t: $mp3 0 0 0;
-$mp3-b: 0 0 $mp3 0;
-$mp3-r: 0 $mp3 0 0;
-$mp3-l: 0 0 0 $mp3;
-$mp3-v: $mp3 0;
-$mp3-h: 0 $mp3;
-
-$mp4-t: $mp4 0 0 0;
-$mp4-b: 0 0 $mp4 0;
-$mp4-r: 0 $mp4 0 0;
-$mp4-l: 0 0 0 $mp4;
-$mp4-v: $mp4 0;
-$mp4-h: 0 $mp4;
-
-$mp5-t: $mp5 0 0 0;
-$mp5-b: 0 0 $mp5 0;
-$mp5-r: 0 $mp5 0 0;
-$mp5-l: 0 0 0 $mp5;
-$mp5-v: $mp5 0;
-$mp5-h: 0 $mp5;
 
 /* Borders */
-$mobile-nav-border: 3px solid white;
 
 /* Font Sizes */
 $fs1: .8em;
@@ -127,9 +20,3 @@ $skills-title-size: $fs3;
 $footer-font-size: $fs1;
 
 
-/* Animations */
-$animation-speed-fast: 250ms;
-$animation-speed-medium: 500ms;
-$animation-speed-slow: 1s;
-
-$mobile-nav-animation: all $animation-speed-fast ease-in-out;

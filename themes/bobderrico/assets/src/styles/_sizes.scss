@@ -1,0 +1,69 @@
+/* Margin/Padding Helper Variables*/
+
+/* Base sizes */
+$mp1: 8px;
+$mp2: 15px;
+$mp3: 30px;
+$mp4: 50px;
+$mp5: 75px;
+
+/* Sizes for box model */
+/* t - top | b - bottom | l - left | r - right | v - vertical (tb) | h - horizontal (lr) */
+$mp1-t: $mp1 0 0 0;
+$mp1-b: 0 0 $mp1 0;
+$mp1-l: 0 $mp1 0 0;
+$mp1-r: 0 0 0 $mp1;
+$mp1-v: $mp1 0;
+$mp1-h: 0 $mp1;
+
+$mp2-t: $mp2 0 0 0;
+$mp2-b: 0 0 $mp2 0;
+$mp2-r: 0 $mp2 0 0;
+$mp2-l: 0 0 0 $mp2;
+$mp2-v: $mp2 0;
+$mp2-h: 0 $mp2;
+
+$mp3-t: $mp3 0 0 0;
+$mp3-b: 0 0 $mp3 0;
+$mp3-r: 0 $mp3 0 0;
+$mp3-l: 0 0 0 $mp3;
+$mp3-v: $mp3 0;
+$mp3-h: 0 $mp3;
+
+$mp4-t: $mp4 0 0 0;
+$mp4-b: 0 0 $mp4 0;
+$mp4-r: 0 $mp4 0 0;
+$mp4-l: 0 0 0 $mp4;
+$mp4-v: $mp4 0;
+$mp4-h: 0 $mp4;
+
+$mp5-t: $mp5 0 0 0;
+$mp5-b: 0 0 $mp5 0;
+$mp5-r: 0 $mp5 0 0;
+$mp5-l: 0 0 0 $mp5;
+$mp5-v: $mp5 0;
+$mp5-h: 0 $mp5;
+
+/* Dimensions */
+$header-height: 120px;
+$header-menu-toggle-size: 40px;
+
+$mobile-nav-width: 75%;
+$mobile-nav-social-icon-size: 16px;
+
+$home-hero-height: 300px;
+$job-hero-height: 260px;
+$single-hero-height: 225px;
+$page-hero-height: 125px;
+
+$skills-hero-size: 1.25em;
+$skills-home-size: 1.25em;
+$skills-list-hero-height: 200px;
+$skills-hero-height: 150px;
+$skills-icons-size: 200px;
+$skills-count-size: 12px;
+
+$error-icon-size: 150px;
+
+$footer-height: 40px;
+

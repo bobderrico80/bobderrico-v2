@@ -1,7 +1,7 @@
 .single {
 
   .hero-container {
-    min-height: $hero-height-single;
+    min-height: $single-hero-height;
   }
 
   .hero-content {
@@ -21,7 +21,7 @@
     float: right;
 
     a {
-      color: white;
+      color: $hero-link-color;
     }
   }
 
@@ -54,7 +54,7 @@
 
 .page {
   .hero-container {
-    min-height: $hero-height-page;
+    min-height: $page-hero-height;
     padding: $mp3-t;
   }
 
