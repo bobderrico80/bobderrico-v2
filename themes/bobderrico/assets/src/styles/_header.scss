@@ -3,47 +3,45 @@
   background-color: $header-bg-color;
   padding: $mp2;
   height: $header-height;
+}
 
-  .menu-toggle, .site-branding {
-    float: left;
+.menu-toggle, .site-branding {
+  float: left;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: $header-menu-toggle-color;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0;
+  font-size: $header-menu-toggle-size;
+  margin-top: ($header-height - $header-menu-toggle-size - $mp2 * 2) / 2
+}
+
+.site-branding {
+  margin-left: $mp3;
+}
+
+.site-title {
+  margin: 0;
+
+  a {
+    color: $header-main-color;
+    text-decoration: none;
   }
+}
 
+.site-description {
+  color: $header-secondary-color;
+  margin: 0;
+}
+
+.toggled {
   .menu-toggle {
-    background: none;
-    border: none;
-    color: $header-menu-toggle-color;
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0;
-    font-size: $header-menu-toggle-size;
-    margin-top: ($header-height - $header-menu-toggle-size - $mp2 * 2) / 2
+    color: $header-menu-toggle-active-color;
   }
-
-  .site-branding {
-    margin-left: $mp3;
-  }
-
-  .site-title {
-    margin: 0;
-
-    a {
-      color: $header-main-color;
-      text-decoration: none;
-    }
-  }
-
-  .site-description {
-    color: $header-secondary-color;
-    margin: 0;
-  }
-
-  .toggled {
-    .menu-toggle {
-      color: $header-menu-toggle-active-color;
-    }
-
-  }
-
 }
 
 .nav-menu {
@@ -79,23 +77,28 @@
 
   }
 
-  .social-buttons {
-    font-size: $mobile-nav-social-icon-size;
-    overflow: hidden;
-
-    a {
-      color: $mobile-nav-social-icon-color;
-    }
-
-    li {
-      float: left;
-      margin-right: $mp2;
-    }
-  }
 
   #search-form {
     margin: $mp2-t;
   }
+}
+
+.social-buttons {
+  font-size: $fs2;
+  overflow: hidden;
+
+  a {
+    color: $mobile-nav-social-icon-color;
+  }
+
+  li {
+    float: left;
+    margin-right: $mp2;
+  }
+}
+
+.desktop-social-search {
+  display: none;
 }
 
 /* Override to keep menu text from disappearing when mobile menu slides out */
@@ -103,3 +106,100 @@
   display: block;
 }
 
+@media (min-width: $bp-sm) {
+  header.site-header {
+    padding: $mp2-v;
+  }
+
+  .header-content-wrap {
+    margin: $mp3-h;
+  }
+
+  .header-primary {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main-navigation {
+
+    ul.social-buttons, #search-form {
+      float: none;
+    }
+  }
+
+  .mobile-social-search {
+    display: none;
+  }
+
+  .desktop-social-search {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    #search-form {
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-branding {
+    float: none;
+    margin: 0;
+  }
+
+  .site-title {
+    font-size: $fs5;
+  }
+
+  .site-description {
+    font-size: $fs3;
+  }
+
+  .nav-menu {
+    position: static;
+    background: none;
+    margin: $mp3 auto;
+    padding: 0;
+    border: 0;
+    width: auto;
+  }
+
+  ul.social-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: $mp1-t;
+
+    li {
+      font-size: $fs3;
+      margin: $mp2-l;
+    }
+  }
+
+  ul.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    li {
+      margin: $mp3-r;
+    }
+  }
+
+  .site-header {
+    height: 225px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .header-content-wrap {
+    margin: 0 auto;
+    width: $cw-lg;
+  }
+
+  ul.menu li {
+    margin: $mp4-r;
+  }
+
+}

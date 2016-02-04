@@ -25,49 +25,33 @@
       <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', '_s'); ?></a>
       <div class="page-wrap">
         <header id="masthead" class="site-header" role="banner">
-          <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-              <i class="fa fa-bars"></i>
-            </button>
-            <div class="site-branding">
-              <h1 class="site-title">
-                <a href="<?= esc_url(home_url('/')); ?>" rel="home">
-                  <?= get_bloginfo('name'); ?>
-                </a>
-              </h1>
-              <p class="site-description"><?= get_bloginfo('description', 'display') ?></p>
-            </div><!-- .site-branding -->
-            <div class="nav-menu" aria-expanded="false">
-              <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
-              <ul class="social-buttons">
-                <li>
-                  <a href="https://twitter.com/bobderrico80" target="_blank" title="Bob D'Errico on Twitter">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/bobderrico" target="_blank" title="Bob D'Errico on LinkedIn">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://github.com/bobderrico80" target="_blank" title="Bob D'Errico on GitHub">
-                    <i class="fa fa-github"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/drfinale/" target="_blank" title="Bob D'Errico on Instagram">
-                    <i class="fa fa-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/robert.derrico" target="_blank" title="Bob D'Errico on Facebook">
-                    <i class="fa fa-facebook-official"></i>
-                  </a>
-                </li>
-              </ul>
-              <?php get_search_form() ?>
-            </div>
-          </nav><!-- #site-navigation -->
+          <div class="header-content-wrap">
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+              <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="header-primary">
+                <div class="site-branding">
+                  <h1 class="site-title">
+                    <a href="<?= esc_url(home_url('/')); ?>" rel="home">
+                      <?= get_bloginfo('name'); ?>
+                    </a>
+                  </h1>
+                  <p class="site-description"><?= get_bloginfo('description', 'display') ?></p>
+                </div><!-- .site-branding -->
+                <div class="desktop-social-search">
+                  <?php get_template_part('template-parts/social-buttons'); ?>
+                  <?php get_search_form() ?>
+                </div>
+              </div>
+              <div class="nav-menu" aria-expanded="false">
+                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+                <div class="mobile-social-search">
+                  <?php get_template_part('template-parts/social-buttons'); ?>
+                  <?php get_search_form() ?>
+                </div>
+              </div>
+            </nav><!-- #site-navigation -->
+          </div>
         </header><!-- #masthead -->
         <div id="content" class="site-content">

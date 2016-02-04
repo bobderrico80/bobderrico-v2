@@ -49,7 +49,6 @@ $header-height: 120px;
 $header-menu-toggle-size: 40px;
 
 $mobile-nav-width: 75%;
-$mobile-nav-social-icon-size: 16px;
 
 $home-hero-height: 300px;
 $job-hero-height: 260px;
@@ -66,4 +65,15 @@ $skills-count-size: 12px;
 $error-icon-size: 150px;
 
 $footer-height: 40px;
+
+/* Breakpoints */
+$bp-sm: 768px;
+$bp-md: 992px;
+$bp-lg: 1200px;
+
+/* Content Wraps */
+$cw-sm: $bp-sm - 2 * $mp3;
+$cw-md: $bp-md - 2 * $mp3;
+$cw-lg: $bp-lg - 2 * $mp3;
+
 
