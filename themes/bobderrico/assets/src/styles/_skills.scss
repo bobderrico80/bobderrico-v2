@@ -13,10 +13,6 @@
     margin: $mp2;
   }
 
-  .hero-container {
-    min-height: $skills-list-hero-height;
-  }
-
   .skill-link {
     display: block;
     margin: $mp5-b;
@@ -73,14 +69,7 @@
 
   .hero-container {
 
-    min-height: $skills-hero-height;
-
-    i {
-      font-size: 100px;
-    }
-
     .skill-title {
-      font-size: $fs6;
       position: relative;
       top: -15px;
       left: 10px;

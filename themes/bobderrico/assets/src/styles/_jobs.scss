@@ -16,14 +16,12 @@
 }
 
 .single-job .hero-container, .post-type-archive-job .hero-container {
-  min-height: $job-hero-height;
 
   a {
     color: $hero-link-color;
   }
 
   .entry-title {
-    margin: $mp3-t;
     line-height: normal;
   }
 

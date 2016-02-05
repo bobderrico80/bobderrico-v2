@@ -16,11 +16,13 @@ $skill = get_term_by('slug', get_query_var('term'), 'skills');
   <div class="hero-container">
     <div class="hero-blank-bg"></div>
     <header class="hero-content">
-      <div class="job-header">
-        <h1 class="entry-title"><?= get_the_title() ?></h1>
-        <div class="entry-meta">
-          <?php $bobderrico->render_job_info(get_the_ID()) ?>
-          <?php $bd_skills->render_skills_icons(get_the_ID()) ?>
+      <div class="hero-content-wrap">
+        <div class="job-header">
+          <h1 class="entry-title"><?= get_the_title() ?></h1>
+          <div class="entry-meta">
+            <?php $bobderrico->render_job_info(get_the_ID()) ?>
+            <?php $bd_skills->render_skills_icons(get_the_ID()) ?>
+          </div>
         </div>
       </div>
     </header>

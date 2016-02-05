@@ -10,12 +10,14 @@
 <div class="hero-container">
   <div class="hero-blank-bg"></div>
     <header class="hero-content">
-      <h2>
-        <?php
-        echo wp_is_mobile() ? __('Tap', 'bobderrico') : __('Click', 'bobderrico');
-        echo ' ';
-        echo __('a skill to view relevant projects, work experience, and blog posts.', 'bobderrico');
-        ?>
-      </h2>
+      <div class="hero-content-wrap">
+        <h2>
+          <?php
+          echo wp_is_mobile() ? __('Tap', 'bobderrico') : __('Click', 'bobderrico');
+          echo ' ';
+          echo __('a skill to view relevant projects, work experience, and blog posts.', 'bobderrico');
+          ?>
+        </h2>
+      </div>
     </header>
 </div>

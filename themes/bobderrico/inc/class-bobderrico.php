@@ -330,6 +330,7 @@ class Bobderrico {
     ?>
 
     <p class="project-project-url">
+      <i class="fa fa-globe"></i>
       <a href="<?= $project_urls['project'] ?>">
         <?= $project_urls['project'] ?>
       </a>

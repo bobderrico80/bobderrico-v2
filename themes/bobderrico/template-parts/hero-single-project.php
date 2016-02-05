@@ -26,11 +26,13 @@ if ($has_post_thumbnail) {
     <div class="hero-img-bg" style="background-image: url('<?= $featured_image_src ?>')"></div>
     <?php endif; ?>
       <header class="hero-content">
-        <h1 class="hero-title">
-          <?= get_the_title() ?>
-        </h1>
-        <?php $bobderrico->render_project_links($the_id) ?>
-        <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
-        <div class="clearfix"></div>
+        <div class="hero-content-wrap">
+          <h1 class="hero-title">
+            <?= get_the_title() ?>
+          </h1>
+          <?php $bobderrico->render_project_links($the_id) ?>
+          <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
+          <div class="clearfix"></div>
+        </div>
       </header>
   </div>

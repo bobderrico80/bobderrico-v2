@@ -37,16 +37,18 @@ if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
   <div class="hero-img-bg" style="background-image: url('<?= $featured_image_src ?>')"></div>
   <?php endif; ?>
   <header class="hero-content">
-    <h1 class="hero-title">
+    <div class="hero-content-wrap">
+      <h1 class="hero-title">
         Current Position: <br class="mobile-br-only"><?= get_the_title() ?>
-    </h1>
-    <?php $bobderrico->render_job_info($the_id) ?>
-    <p class="hero-excerpt"><?= get_the_excerpt() ?></p>
-    <a href="<?= get_the_permalink() ?> "class="btn-link btn-hero-more">
-      Read More
-    </a>
-    <div class="hero-meta">
-      <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
+      </h1>
+      <?php $bobderrico->render_job_info($the_id) ?>
+      <p class="hero-excerpt"><?= get_the_excerpt() ?></p>
+      <a href="<?= get_the_permalink() ?> "class="btn-link btn-hero-more">
+        Read More
+      </a>
+      <div class="hero-meta">
+        <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
+      </div>
     </div>
   </header>
 </div>

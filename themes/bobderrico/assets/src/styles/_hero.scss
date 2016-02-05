@@ -8,10 +8,11 @@
 
 .hero-container {
   width: 100%;
-  min-height: $home-hero-height;
   position: relative;
   margin: $mp3-b;
 }
+
+
 
 .hero-link {
   display: block;
@@ -25,7 +26,7 @@
 .hero-blank-bg {
   @include hero-component();
   z-index: 0;
-  background: $hero-blank-bg-color;
+  background-image: $hero-blank-bg-color-xs;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -39,7 +40,7 @@
 
 .hero-content {
   @include hero-component();
-  position: relative;
+  position: absolute;
   z-index: 2;
   padding: $mp2;
   background-color: $hero-overlay-color;
@@ -76,12 +77,12 @@ a.btn-hero-more {
 
 .hero-meta {
   overflow: hidden;
+  margin: $mp2-t;
 }
 
 .hero-skills {
   font-size: $skills-hero-size;
   float: left;
-  margin: $mp2-t;
 
   a {
     color: $hero-main-color;
@@ -96,7 +97,141 @@ a.btn-hero-more {
 .hero-date {
   color: $hero-main-color;
   float: right;
-  margin: $mp2-t;
+}
+
+body.home .hero-container {
+  height: $home-hero-height;
+}
+
+body.post-type-archive-job .hero-container {
+  height: $job-hero-height-xs;
+}
+
+body.page .hero-container {
+  height: $page-hero-height;
+}
+
+body.post-type-archive-project .hero-container {
+  height: $project-hero-height;
+}
+
+body.single .hero-container {
+  height: $single-hero-height-xs;
+}
+
+body.single-job .hero-container {
+  height: $single-job-hero-height-xs;
+}
+
+body.single-project .hero-container {
+  height: $single-project-hero-height-xs;
+}
+
+body.skills-list .hero-container {
+  height: $skills-list-hero-height;
+}
+
+body.tax-skills .hero-container {
+  height: $skills-hero-height-xs;
+
+  i {
+    font-size: $skills-hero-icon-size-xs;
+  }
+
+  .skill-title {
+    font-size: $fs4;
+  }
+}
+
+
+
+@media (min-width: $bp-sm) {
+  .hero-content-wrap {
+    margin: $mp3-h;
+  }
+
+  .hero-blank-bg {
+    background-image: $hero-blank-bg-color-sm;
+  }
+
+  .hero-content {
+    padding: $mp4-v;
+  }
+
+  .hero-excerpt {
+    margin: $mp3-v;
+  }
+
+  .hero-meta {
+    margin: $mp3-t;
+  }
+
+  body.home .hero-container {
+    height: $home-hero-height;
+  }
+
+  body.post-type-archive-job .hero-container {
+    height: $job-hero-height-sm;
+  }
+
+  body.single .hero-container {
+    height: $single-hero-height-sm;
+  }
+
+  body.single-job .hero-container {
+    height: $single-job-hero-height-sm;
+  }
+
+  body.single-project .hero-container {
+    height: $single-project-hero-height-sm;
+  }
+
+  body.skills-list .hero-content {
+    display: flex;
+    align-items: center;
+  }
+
+  body.tax-skills .hero-container {
+    height: $skills-hero-height-sm;
+
+    i {
+      font-size: $skills-hero-icon-size-sm;
+    }
+
+    .skill-title {
+      font-size: $fs5;
+    }
+  }
+
+}
+
+@media (min-width: $bp-md) {
+  .hero-blank-bg {
+    background-image: $hero-blank-bg-color-md;
+  }
+
+  .hero-content-wrap {
+    margin: 0 auto;
+    width: $cw-md;
+  }
+
+}
+
+@media (min-width: $bp-lg) {
+  .hero-blank-bg {
+    background-image: $hero-blank-bg-color-lg;
+  }
+
+  .hero-content-wrap {
+    margin: 0 auto;
+    width: $cw-lg;
+    padding: $mp3-h;
+
+    body.page & {
+      padding: 0;
+    }
+  }
+
 }
 
 

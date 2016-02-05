@@ -17,9 +17,11 @@ $skill = get_term_by('slug', get_query_var('term'), 'skills');
   <div class="hero-container">
     <div class="hero-blank-bg"></div>
     <header class="hero-content">
-      <div class="skill-header">
-        <?php $bd_skills->render_skills_icon($skill) ?>
-        <span class="skill-title"><?= $skill->name ?></span>
+      <div class="hero-content-wrap">
+        <div class="skill-header">
+          <?php $bd_skills->render_skills_icon($skill) ?>
+          <span class="skill-title"><?= $skill->name ?></span>
+        </div>
       </div>
     </header>
   </div>

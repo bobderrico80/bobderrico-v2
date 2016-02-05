@@ -25,8 +25,10 @@ if ($has_post_thumbnail) {
     <div class="hero-img-bg" style="background-image: url('<?= $featured_image_src ?>')"></div>
     <?php endif; ?>
       <header class="hero-content">
-        <h1 class="hero-title">
-          <?= get_the_title() ?>
-        </h1>
+        <div class="hero-content-wrap">
+          <h1 class="hero-title">
+            <?= get_the_title() ?>
+          </h1>
+        </div>
       </header>
   </div>

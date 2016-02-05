@@ -1,9 +1,5 @@
 .single {
 
-  .hero-container {
-    min-height: $single-hero-height;
-  }
-
   .hero-content {
     position: absolute;
   }
@@ -53,10 +49,6 @@
 }
 
 .page {
-  .hero-container {
-    min-height: $page-hero-height;
-    padding: $mp3-t;
-  }
 
   .hero-content {
     position: absolute;

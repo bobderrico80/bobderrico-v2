@@ -34,11 +34,14 @@ $mobile-nav-link-color: $white;
 $mobile-nav-current-link-color: $brand-accent-color-l;
 $mobile-nav-social-icon-color: $grey-l;
 
-$hero-blank-bg-color: url('/wp-content/themes/bobderrico/assets/dist/images/background-xs.jpg');
+$hero-blank-bg-color-xs: url('/wp-content/themes/bobderrico/assets/dist/images/background-xs.jpg');
+$hero-blank-bg-color-sm: url('/wp-content/themes/bobderrico/assets/dist/images/background-sm.jpg');
+$hero-blank-bg-color-md: url('/wp-content/themes/bobderrico/assets/dist/images/background-md.jpg');
+$hero-blank-bg-color-lg: url('/wp-content/themes/bobderrico/assets/dist/images/background-lg.jpg');
 $hero-overlay-color: $overlay;
 $hero-main-color: $white;
 $hero-link-color: $white;
-$hero-secondary-color: $brand-accent-color;
+$hero-secondary-color: $brand-accent-color-l;
 $hero-text-shadow: 1px 1px 5px $black;
 $hero-button-bg-color: $brand-main-color;
 $hero-button-color: $white;
@@ -51,10 +54,10 @@ $skills-icons-color: $brand-main-color;
 $skills-title-color: $brand-main-color;
 $skills-count-color: $white;
 $skills-count-bg-color: $brand-main-color;
-$skills-hero-bg: $hero-blank-bg-color;
+$skills-hero-bg: $hero-blank-bg-color-xs;
 $skills-hero-color: $white;
 
-$job-hero-bg: $hero-blank-bg-color;
+$job-hero-bg: $hero-blank-bg-color-xs;
 $job-hero-color: $white;
 $job-hero-link-color: $white;
 

@@ -6,6 +6,12 @@ body {
   font-size: 16px;
 }
 
+@media (min-width: $bp-sm) {
+  body {
+    font-size: 18px;
+  }
+}
+
 /* General Font Sizes */
 $fs1: .75em;
 $fs2: 1em;
