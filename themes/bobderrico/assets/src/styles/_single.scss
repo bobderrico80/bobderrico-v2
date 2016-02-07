@@ -31,6 +31,7 @@
 
   .comments-area {
     margin-top: $mp4;
+    margin-bottom: $mp4;
   }
 
   .entry-footer {
@@ -58,5 +59,24 @@
 }
 
 .page-title {
-  margin: $mp3 $mp2;
+  margin: $mp3 0;
+}
+
+@media (min-width: $bp-sm) {
+  [class*="wp-image"] {
+    width: 800px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  iframe {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .comment-respond {
+    width: 700px;
+    margin: 0 auto;
+  }
+
 }

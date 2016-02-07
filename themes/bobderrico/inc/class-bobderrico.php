@@ -36,6 +36,7 @@ class Bobderrico {
     add_filter('wp_list_pages', [$this, 'add_custom_post_archives_to_menu']);
     add_filter('wp_nav_menu_items', [$this, 'add_custom_post_archives_to_menu']);
     add_action('after_setup_theme', [$this, 'add_custom_image_sizes']);
+    add_filter('body_class', [$this, 'add_slug_to_body_class']);
 
   }
 
@@ -422,6 +423,29 @@ class Bobderrico {
     add_image_size('square-sm', 868, 868, true);
     add_image_size('square-md', 1000, 1000, true);
   }
+
+  public function add_slug_to_body_class($classes) {
+
+    $classes[] = get_post_field('post_name', get_the_ID());
+
+    return $classes;
+
+  }
+
+  public function render_comment_count($post_id, $class = 'entry-comment-count') {
+
+    if ($comment_count = get_comments_number($post_id)) {
+      ?>
+      <div class="<?= $class ?>">
+        <a href="<?= get_the_permalink($post_id) ?>#comments">
+          <i class="fa fa-comment"></i> <?= $comment_count ?>
+        </a>
+      </div>
+      <?php
+    }
+  }
+
+
 
 
 }

@@ -35,7 +35,7 @@ $comment_count = get_comments_number($the_id);
     </div><!-- .entry - meta-->
   </header><!-- .entry-header -->
   <div class="entry-main">
-    <?php $bobderrico->render_featured_image($the_id) ?>
+    <?php $bobderrico->render_featured_image($the_id, 'square-md') ?>
     <div class="entry-content">
       <?php
       $read_more_text = esc_html__('Read More', 'bobderrico');

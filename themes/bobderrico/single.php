@@ -37,6 +37,7 @@ get_header();
       ?>
 
       </div>
+      </article><!-- #post-## -->
     </main><!-- #main -->
   </div><!-- #primary -->
 

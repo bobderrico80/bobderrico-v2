@@ -42,6 +42,7 @@ if ($latest->have_posts()) : while($latest->have_posts()) : $latest->the_post();
           </a>
           <div class="hero-meta">
             <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
+            <?php $bobderrico->render_comment_count(get_the_ID()); ?>
             <?php $bobderrico->render_post_time('hero-date'); ?>
           </div>
         </div>

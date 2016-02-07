@@ -19,4 +19,3 @@ $title = get_the_title();
       <?= get_the_tag_list(__('Tagged as: ', 'bobderrico'), ', ') ?>
     </div>
   </div>
-</article><!-- #post-## -->

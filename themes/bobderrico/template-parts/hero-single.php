@@ -31,13 +31,7 @@ if ($has_post_thumbnail) {
           </h1>
           <?php $bobderrico->render_post_time('hero-date'); ?>
           <?php $bd_skills->render_skills_icons(get_the_ID(), 'hero-skills'); ?>
-          <?php if ($comment_count): ?>
-            <div class="hero-comment-count">
-              <a href="#comments">
-                <i class="fa fa-comment"></i> <?= $comment_count ?>
-              </a>
-            </div>
-          <?php endif; ?>
+          <?php $bobderrico->render_comment_count(get_the_ID(), 'hero-comment-count'); ?>
         </div>
       </header>
   </div>

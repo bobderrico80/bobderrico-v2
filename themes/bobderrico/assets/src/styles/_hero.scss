@@ -78,11 +78,13 @@ a.btn-hero-more {
 .hero-meta {
   overflow: hidden;
   margin: $mp2-t;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
 }
 
 .hero-skills {
   font-size: $skills-hero-size;
-  float: left;
 
   a {
     color: $hero-main-color;
@@ -94,9 +96,12 @@ a.btn-hero-more {
 
 }
 
+.entry-comment-count a {
+  color: $hero-main-color;
+}
+
 .hero-date {
   color: $hero-main-color;
-  float: right;
 }
 
 body.home .hero-container {

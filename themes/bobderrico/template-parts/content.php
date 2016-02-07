@@ -14,7 +14,6 @@ $the_id = get_the_ID();
 $permalink = esc_url(get_permalink());
 $title = get_the_title();
 $featured_image_info = $bobderrico->get_featured_image_info($the_id);
-$comment_count = get_comments_number($the_id);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -41,12 +40,6 @@ $comment_count = get_comments_number($the_id);
   </div>
   <footer class="entry-footer">
     <?php $bd_skills->render_skills_icons(get_the_ID(), 'home-skills'); ?>
-    <?php if ($comment_count): ?>
-    <div class="entry-comment-count">
-      <a href="<?= $permalink ?>#comments">
-        <i class="fa fa-comment"></i> <?= $comment_count ?>
-      </a>
-    </div>
-    <?php endif; ?>
+    <?php $bobderrico->render_comment_count(get_the_ID()) ?>
   </footer><!-- .entry-footer -->
 </article><!-- #post-## -->
