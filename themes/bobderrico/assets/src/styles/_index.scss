@@ -37,6 +37,42 @@
     overflow: hidden;
   }
 
+}
 
+@media (min-width: $bp-md) {
+  .home, .archive, .search-results {
+    article {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
 
+    }
+
+    .entry-header {
+    }
+
+    .entry-main {
+      display: flex;
+    }
+
+    .entry-featured-image {
+      width: $archive-featured-image-md;
+      height: $archive-featured-image-md;
+    }
+
+    .entry-content {
+      margin: $mp3-l;
+    }
+
+    .skills-icons, .entry-comment-count {
+      float: none;
+    }
+
+    .entry-footer {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      margin: $mp2-t;
+    }
+  }
 }

@@ -35,6 +35,7 @@ class Bobderrico {
     add_action('save_post', [$this, 'save_custom_fields']);
     add_filter('wp_list_pages', [$this, 'add_custom_post_archives_to_menu']);
     add_filter('wp_nav_menu_items', [$this, 'add_custom_post_archives_to_menu']);
+    add_action('after_setup_theme', [$this, 'add_custom_image_sizes']);
 
   }
 
@@ -259,13 +260,13 @@ class Bobderrico {
 
   }
 
-  public function get_featured_image_info($post_id) {
+  public function get_featured_image_info($post_id, $size = null) {
 
     if (has_post_thumbnail()) {
       $featured_image_info = [];
       $post_thumbnail_id = get_post_thumbnail_id($post_id);
       $featured_image_info['src'] = wp_get_attachment_image_url($post_thumbnail_id, 'full');
-      $featured_image_info['srcset'] = wp_get_attachment_image_srcset($post_thumbnail_id);
+      $featured_image_info['srcset'] = wp_get_attachment_image_srcset($post_thumbnail_id, $size);
       $featured_image_info['alt'] = get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true);
 
       return $featured_image_info;
@@ -310,9 +311,9 @@ class Bobderrico {
 
   }
 
-  public function render_featured_image($post_id) {
+  public function render_featured_image($post_id, $size = null) {
 
-    $featured_image_info = $this->get_featured_image_info($post_id);
+    $featured_image_info = $this->get_featured_image_info($post_id, $size);
 
     if ($featured_image_info):
       ?>
@@ -414,6 +415,12 @@ class Bobderrico {
 
     return implode('</li>', $item_array);
 
+  }
+
+  public function add_custom_image_sizes() {
+    add_image_size('square-xs', 768, 768, true);
+    add_image_size('square-sm', 868, 868, true);
+    add_image_size('square-md', 1000, 1000, true);
   }
 
 

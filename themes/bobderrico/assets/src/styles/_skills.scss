@@ -9,6 +9,13 @@
 }
 
 .skills-list {
+
+  .content-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
   .skills-list-description, .skill-link {
     margin: $mp2;
   }
@@ -17,6 +24,13 @@
     display: block;
     margin: $mp5-b;
     color: $skills-icons-color;
+  }
+
+  .skill-block {
+    margin: $mp2;
+    padding: $mp3;
+    border: 1px solid $brand-main-color-xl;
+    border-radius: 5px;
   }
 
   .skill-icon-container {

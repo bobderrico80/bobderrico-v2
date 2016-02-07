@@ -10,3 +10,10 @@
   }
 }
 
+@media (min-width: $bp-sm) {
+  .content-wrap {
+    margin: 0 auto;
+    width: 700px;
+  }
+}
+

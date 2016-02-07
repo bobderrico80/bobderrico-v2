@@ -69,4 +69,19 @@ blockquote {
   .mobile-br-only {
     display: none;
   }
+
+  .content-wrap {
+    margin: $mp3-h;
+  }
+}
+
+@media (min-width: $bp-md) {
+
+}
+
+@media (min-width: $bp-lg) {
+  .content-wrap {
+    margin: 0 auto;
+    width: $cw-lg;
+  }
 }

@@ -19,6 +19,9 @@ get_header();
       while (have_posts()) : the_post();
 
         get_template_part('template-parts/hero', 'single-job');
+        ?>
+      <div class="content-wrap">
+        <?php
         get_template_part('template-parts/content', 'single-job');
 
         the_post_navigation([
@@ -33,6 +36,7 @@ get_header();
       endwhile; // End of the loop.
       ?>
 
+      </div>
     </main><!-- #main -->
   </div><!-- #primary -->
 

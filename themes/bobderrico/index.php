@@ -18,6 +18,9 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
       <?php
       if (have_posts()) :
+        ?>
+          <div class="content-wrap">
+            <?php
 
         if (is_home() && !is_front_page()) : ?>
           <header>
@@ -47,6 +50,7 @@ get_header(); ?>
 
       endif; ?>
 
+            </div>
     </main><!-- #main -->
   </div><!-- #primary -->
 

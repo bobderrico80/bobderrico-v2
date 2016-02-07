@@ -27,20 +27,18 @@ $comment_count = get_comments_number($the_id);
     <div class="entry-meta">
       <?php $bobderrico->render_post_time(); ?>
     </div><!-- .entry - meta-->
-    <?php $bobderrico->render_featured_image($the_id) ?>
-
   </header><!-- .entry-header -->
-  <div class="entry-content">
-    <?php
-    $read_more_text = esc_html__('Read More', 'bobderrico');
-    $continue = $read_more_text . '<span class="screen-reader-text">' . $title . '</span>';
-    $continue .= '<span class="meta-nav">&rarr;</span>';
-
-    the_content($continue);
-
-    ?>
-  </div><!-- .entry-content -->
-
+  <div class="entry-main">
+    <?php $bobderrico->render_featured_image($the_id, 'square-md') ?>
+    <div class="entry-content">
+      <?php
+      $read_more_text = esc_html__('Read More', 'bobderrico');
+      $continue = $read_more_text . '<span class="screen-reader-text">' . $title . '</span>';
+      $continue .= '<span class="meta-nav">&rarr;</span>';
+      the_content($continue);
+      ?>
+    </div><!-- .entry-content -->
+  </div>
   <footer class="entry-footer">
     <?php $bd_skills->render_skills_icons(get_the_ID(), 'home-skills'); ?>
     <?php if ($comment_count): ?>
@@ -50,6 +48,5 @@ $comment_count = get_comments_number($the_id);
       </a>
     </div>
     <?php endif; ?>
-    <div class="clearfix"></div>
   </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

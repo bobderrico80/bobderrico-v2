@@ -17,6 +17,9 @@ get_header(); ?>
 
       if (have_posts()) :
 
+        ?>
+          <div class="content-wrap">
+            <?php
         if (!is_front_page()) : ?>
           <header>
             <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
@@ -45,6 +48,7 @@ get_header(); ?>
 
       endif; ?>
 
+      </div>
     </main><!-- #main -->
   </div><!-- #primary -->
 
