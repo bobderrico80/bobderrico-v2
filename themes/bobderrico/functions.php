@@ -121,7 +121,7 @@
     wp_enqueue_style('bobderrico-styles', get_template_directory_uri() . '/assets/dist/styles/main.css',
                      [], wp_get_theme()->get('Version'));
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/dist/vendor/font-awesome/css/font-awesome.min.css');
-    wp_enqueue_style('font-mfizz', get_template_directory_uri() . '/assets/dist/vendor/font-mfizz/dist/font-mfizz.css');
+    wp_enqueue_style('technology-icons', get_template_directory_uri() . '/assets/dist/vendor/technology-icons/dist/styles/technology-icons.css');
     wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/dist/vendor/jquery/dist/jquery.min.js');
     wp_enqueue_script('bobderrico-scripts', get_template_directory_uri() . '/assets/dist/scripts/main.js',
                       ['jquery'], wp_get_theme()->get('Version'), true);

@@ -3,6 +3,6 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "font-awesome": "~4.5.0",
-    "font-mfizz": "https://github.com/fizzed/font-mfizz.git#v2.2"
+    "technology-icons": "https://github.com/bobderrico80/technology-icons.git#master"
   }
 }

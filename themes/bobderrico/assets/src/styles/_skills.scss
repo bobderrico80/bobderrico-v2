@@ -31,6 +31,8 @@
     padding: $mp3;
     border: 1px solid $brand-main-color-xl;
     border-radius: 5px;
+    width: 300px;
+    height: 300px;
   }
 
   .skill-icon-container {
@@ -40,13 +42,7 @@
     i {
       font-size: 200px;
       position: relative;
-      left: 20px;
     }
-
-    i.icon-wordpress, i.icon-php {
-      left: 0;
-    }
-
 
   }
 
