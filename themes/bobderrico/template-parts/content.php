@@ -28,7 +28,7 @@ $featured_image_info = $bobderrico->get_featured_image_info($the_id);
     </div><!-- .entry - meta-->
   </header><!-- .entry-header -->
   <div class="entry-main">
-    <?php $bobderrico->render_featured_image($the_id, 'square-md') ?>
+    <?php $bobderrico->render_featured_image($the_id, 'square-xs') ?>
     <div class="entry-content">
       <?php
       $read_more_text = esc_html__('Read More', 'bobderrico');
