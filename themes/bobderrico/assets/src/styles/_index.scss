@@ -11,6 +11,10 @@
 
   .entry-content {
     margin: 0;
+
+    p {
+      margin: $mp2-b;
+    }
   }
 
   .entry-meta {
