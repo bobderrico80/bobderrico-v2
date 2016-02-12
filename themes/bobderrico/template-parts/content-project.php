@@ -29,7 +29,7 @@ $project_urls = $bobderrico->get_project_urls($the_id);
     </div><!-- .entry - meta-->
   </header><!-- .entry-header -->
   <div class="entry-main">
-    <?php $bobderrico->render_featured_image($the_id) ?>
+    <?php $bobderrico->render_featured_image($the_id, 'square-mb') ?>
     <div class="entry-content">
       <?php
       $read_more_text = esc_html__('Read More', 'bobderrico');
