@@ -13,6 +13,7 @@
 
       </div><!-- #content -->
     </div><!-- .page-wrap -->
+</div>
 
     <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="site-info">

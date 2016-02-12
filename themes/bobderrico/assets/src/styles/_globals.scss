@@ -2,17 +2,17 @@
   visibility: hidden;
 }
 
-html, body, .site {
-  min-height: 100%;
+html, body {
+  height: 100%;
   color: $black;
 }
 
-.page-wrap {
+.site {
   min-height: 100%;
   margin-bottom: -$footer-height;
 }
 
-.page-wrap:after {
+.site:after {
   content: '';
   display: block;
   height: $footer-height;
