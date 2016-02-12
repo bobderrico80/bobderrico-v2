@@ -419,6 +419,7 @@ class Bobderrico {
   }
 
   public function add_custom_image_sizes() {
+    add_image_size('square-mb', 300, 300, true);
     add_image_size('square-xs', 768, 768, true);
     add_image_size('square-sm', 868, 868, true);
     add_image_size('square-md', 1000, 1000, true);
